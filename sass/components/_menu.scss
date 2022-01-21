@@ -1,0 +1,166 @@
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 120px;
+	background: #fffcf9 url(../img/ricepaper.jpg);
+    background-size: 300px 300px;
+    background-repeat: repeat;
+	z-index: 888;
+	overflow: hidden;
+	box-shadow: 0 0 0 1px $black, inset 0 0 0 1px $black;
+	.headerblock-wrapper{
+		display: flex;
+    	align-items: center;
+    	position: relative;
+    	text-align: center;
+    	height: 70%;
+    	.header-logo, .header-desc{
+    		flex: 0 0 16.6%;
+		    display: none;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
+		    box-shadow: 0 0 0 1px $black, inset 0 0 0 1px $black;
+		    // padding: 25px 50px;
+		    position: relative;
+		    height: 100%;
+		    @media screen and (min-width: 700px) {
+				display: block;
+			}
+		    .logo{
+		    	width: 100px;
+			    height: 100%;
+			    margin: 0 auto;
+			    max-width: 600px;
+			    background-image: url(../img/logo.png);
+			    background-size: 100%;
+			    background-position: 50%;
+			    background-repeat: no-repeat;
+		    }
+		    .image{
+		    	filter: brightness(90%) grayscale(100%) contrast(130%);
+			    transition: filter .9s;
+			    -webkit-user-drag: none;
+		    }
+		    .desc{
+		    	text-transform: uppercase;
+			    margin: 0;
+			    width: 120px;
+			    text-align: center;
+			    font-size: 14px;
+			    color: $black;
+		    }
+    	}
+    	.header-desc{
+    		display: flex;
+    	}
+    	.header-banner-main{
+    		flex: 8;
+		    box-shadow: 0 0 0 1px $black, inset 0 0 0 1px $black;
+		    padding: 16px;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    color: $black;
+		    height: 100%;
+		    .site-title{
+		    	margin: 0;
+			    width: 100%;
+			    padding: 0 4vw;
+			    font-family: Chomsky;
+			    text-transform: capitalize;
+			    font-size: 46px;
+			    letter-spacing: 2px;
+			    line-height: 1;
+			    margin-bottom: 0;
+			    @media screen and (min-width: 700px) {
+					padding: 0 8vw;
+				}
+		    }
+		    .site-description{
+		    	margin: 0;
+		    	font-family: Italiana;
+		    	font-size: 16px;
+		    }
+    	}
+	}
+	.nav-main{
+		height: 30%;
+		ul.menu{
+			display: flex;
+		    padding: 0;
+		    margin: 0;
+		    flex-wrap: wrap;
+		    height: 100%;
+		    li{
+		    	text-align: center;
+			    flex: 1;
+			    list-style: none;
+			    position: relative;
+			    box-shadow: 0 0 0 1px $black, inset 0 0 0 1px $black;
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    a{
+			    	text-transform: uppercase;
+				    display: block;
+				    margin: 0;
+				    position: relative;
+				    font-size: 14px;
+				    color: $black;
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    width: 100%;
+				    height: 100%;
+				    .hover-indicator{
+				    	position: absolute;
+					    top: 0;
+					    right: 0;
+					    bottom: 0;
+					    left: 0;
+					    mix-blend-mode: multiply;
+					    stroke-dasharray: 900px;
+					    stroke-dashoffset: 900px;
+					    transition: stroke-dashoffset .6s,opacity .1s ease-out;
+					    opacity: 0;
+					    transition-delay: 0s;
+					    will-change: stroke-dashoffset;
+					    .circle-1{
+					    	width: 75px;
+					    }
+					    .circle-2{
+					    	width: 120px;
+					    }
+					    .circle-3{
+					    	width: 90px;
+					    }
+					    &.hover-custom{
+					    	transition: stroke-dashoffset 1.2s,opacity .1s ease-out;
+					    }
+				    }
+				    
+			    }
+			    &:hover{
+			    	a{
+			    		font-weight: bold;
+			    		.hover-indicator{
+				    		stroke-dashoffset: 0;
+    						opacity: 1;
+				    	}
+			    	}
+				    	
+			    }
+		    }
+		}
+	}
+}
+
+.row{
+	flex-direction: row;
+    flex-wrap: wrap;
+}
