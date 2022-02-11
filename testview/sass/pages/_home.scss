@@ -1,0 +1,567 @@
+.container-home{
+	#myVideo{
+		position: absolute;
+	  	right: 0;
+	  	top: 0;
+	  	width: 100%;
+	  	@media screen and (max-width: 980px) {
+			height: 100vh;
+			width: auto;
+		}
+	}
+	.intro{
+		padding-top: 0;
+	}
+	.second-section{
+		.left-section{
+			position: relative;
+			width: 45%;
+		    height: calc(100vh - 220px);
+		    @media screen and (min-width: 1600px) {
+				height: calc(100vh - 275px);
+			}
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				height: calc(50vh - 108px);
+			}
+		    img{
+		    	height: 85%;
+		    	top: 50%;
+		    	cursor: pointer;
+		    	filter: grayscale(90%);
+		    	transition: .6s all;
+		    	// margin-left: 20px;
+		    	&:hover{
+		    		filter: grayscale(0);
+		    	}
+		    	@media screen and (max-width: 480px) {
+					width: 260px;
+					height: 260px;
+				}
+		    }
+		}
+		.right-section{
+			width: 55%;
+			height: calc(100vh - 220px);
+			position: relative;
+			@media screen and (min-width: 1600px) {
+				height: calc(100vh - 275px);
+				padding-left: 20px;
+			}
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				height: calc(50vh - 108px);
+				padding: 0 35px;
+			}
+			.content-right{
+				position: absolute;
+				top: 48%;
+				transform: translateY(-50%);
+				@media screen and (max-width: 480px) {
+					top: 0;
+					transform: translateY(0);
+				}
+			}
+			h1{
+				font-family: 'Bebas Neue', cursive;
+				text-transform: uppercase;
+				font-size: 64px;
+				font-weight: 400;
+				@media screen and (min-width: 1600px) {
+					font-size: 128px;
+				}
+				@media screen and (max-width: 480px) {
+					font-size: 42px;
+					margin-bottom: 15px;
+				}
+			}
+			p{
+				font-size: 16px;
+				max-width: 500px;
+				margin-bottom: 20px;
+				@media screen and (min-width: 1600px) {
+					font-size: 22px;
+					margin-bottom: 25px;
+					max-width: 600px;
+				}
+				@media screen and (max-width: 480px) {
+					font-size: 14px;
+					max-width: 340px;
+					margin-bottom: 10px;
+				}
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.third-section{
+		// border-bottom: 3px solid $black;
+		.inner-container{
+			width: 1120px;
+			@media screen and (min-width: 1600px) {
+				width: 85%;
+			}
+			@media screen and (max-width: 980px) {
+				width: 90%;
+			}
+		}
+		.content-pawback{
+			position: relative;
+			border-bottom: 2px solid $black;
+			.featured{
+				position: absolute;
+				bottom: -21px;
+				left: 50%;
+				transform: translateX(-50%);
+				font-family: 'Bebas Neue', cursive;
+				text-transform: uppercase;
+				background: #fffcf9 url(../img/ricebg.jpg);
+			    background-size: 60px 60px;
+			    background-repeat: repeat;
+			    padding: 10px 45px;
+			    @media screen and (min-width: 1600px) {
+					padding: 14px 45px;
+					bottom: -28px;
+				}
+			}
+		}
+		.footer-pawback{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 130px;
+			@media screen and (min-width: 1600px) {
+				height: 140px;
+			}
+			@media screen and (max-width: 480px) {
+				height: 110px;
+			}
+			a{
+				padding: 0 15px;
+				@media screen and (min-width: 1600px) {
+					padding: 0 20px;
+				}
+				@media screen and (max-width: 480px) {
+					padding: 0 10px;
+				}
+			}
+			.ic_solanalysis{
+				img{
+					width: 120px;
+					@media screen and (min-width: 1600px) {
+						width: 150px;
+					}
+					@media screen and (max-width: 480px) {
+						width: 100px;
+					}
+				}
+			}
+			.ic_nftcalendar{
+				img{
+					width: 60px;
+					@media screen and (min-width: 1600px) {
+						width: 80px;
+					}
+					@media screen and (max-width: 480px) {
+						width: 40px;
+					}
+				}
+			}
+			.ic_howrare{
+				img{
+					height: 45px;
+					@media screen and (min-width: 1600px) {
+						height: 60px;
+					}
+					@media screen and (max-width: 480px) {
+						height: 30px;
+					}
+				}
+			}
+			.ic_upcoming{
+				img{
+					width: 120px;
+					@media screen and (min-width: 1600px) {
+						width: 140px;
+					}
+					@media screen and (max-width: 480px) {
+						width: 100px;
+					}
+				}
+			}
+			img{
+				filter: grayscale(90%);
+		    	transition: .6s all;
+		    	&:hover{
+		    		filter: grayscale(0);
+		    	}
+			}
+		}
+		.left-section{
+			position: relative;
+			width: 430px;
+		    height: calc(100vh - 190px);
+		    @media screen and (min-width: 1600px) {
+				width: 700px;
+				height: calc(100vh - 210px);
+			}
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				height: calc(50vh - 85px);
+			}
+		    .header-pawback{
+		    	position: relative;
+		    	padding: 30px 20px 10px 35px;
+		    	border-bottom: 2px solid $black;
+		    	@media screen and (min-width: 1600px) {
+		    		padding: 70px 20px 20px 35px;
+		    	}
+		    	h1{
+					font-family: 'Bebas Neue', cursive;
+					text-transform: uppercase;
+					font-size: 80px;
+					font-weight: 400;
+					width: 220px;
+    				line-height: 1;
+    				@media screen and (min-width: 1600px) {
+						font-size: 138px;
+						width: 300px;
+						line-height: 120px;
+					}
+					@media screen and (max-width: 480px) {
+						font-size: 64px;
+					}
+				}
+				img{
+					position: absolute;
+					left: 250px;
+				    bottom: -23px;
+				    width: 185px;
+				    @media screen and (min-width: 1600px) {
+						left: 420px;
+				    	bottom: -34px;
+						width: 280px;
+					}
+					@media screen and (max-width: 480px) {
+						left: 210px;
+					    bottom: -16px;
+					    width: 150px;
+					}
+				}
+		    }
+		    .desc-pawback{
+		    	padding: 25px 0 0 35px;
+		    	@media screen and (min-width: 1600px) {
+					padding: 45px 0 0 35px;
+				}
+		    	p{
+		    		font-size: 16px;
+		    		@media screen and (min-width: 1600px) {
+						font-size: 22px;
+					}
+					@media screen and (max-width: 480px) {
+						font-size: 14px;
+					}
+		    	}
+		    }
+		}
+		.right-section{
+			width: calc(100% - 430px);
+			height: calc(100vh - 190px);
+			position: relative;
+			@media screen and (min-width: 1600px) {
+				width: calc(100% - 700px);
+				height: calc(100vh - 210px);
+			}
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				height: calc(50vh - 85px);
+			}
+			img{
+		    	height: 95%;
+		    	top: 50%;
+		    	left: 45%;
+		    	cursor: pointer;
+		    	filter: grayscale(90%);
+		    	transition: .6s all;
+		    	// margin-left: 20px;
+		    	@media screen and (min-width: 1600px) {
+					left: 55%;
+				}
+				@media screen and (max-width: 980px) {
+					left: 55%;
+				}
+				@media screen and (max-width: 480px) {
+					height: 80%;
+				}
+		    	&:hover{
+		    		filter: grayscale(0);
+		    	}
+		    }
+		}
+	}
+	.fourth-section{
+		position: relative;
+		.logo-big{
+			top: 52%;
+			height: 55vh;
+			z-index: 55;
+			@media screen and (max-width: 480px) {
+				height: auto;
+				width: 85vw;
+			}
+		}
+		.photobanner{
+			display: flex;
+			// width: 200%;
+			height: calc(33vh - 20px);
+			overflow: hidden;
+			@media screen and (min-width: 1600px) {
+				height: calc(33vh - 26px);
+			}
+			div{
+				width: 100%;
+			}
+			ul{
+				display: flex;
+				list-style-type: none;
+				padding-left: 0;
+				margin: 0;
+				li{
+					height: calc(33vh - 20px);
+					min-width: calc(33vh - 20px);
+					position: relative;
+					@media screen and (min-width: 1600px) {
+						height: calc(33vh - 26px);
+					}
+					img{
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			&.photobanner1{
+				animation: thumbmoveleft 20s linear infinite;
+			}
+			&.photobanner2{
+				animation: thumbmoveright 12s linear infinite;
+			}
+			&.photobanner3{
+				animation: thumbmoveleft 16s linear infinite;
+			}
+		}
+	}
+	.fifth-section{
+		position: relative;
+		padding: 90px 0 20px;
+		@media screen and (min-width: 1600px) {
+			padding: 120px 0 50px;
+		}
+		@media screen and (max-width: 980px) {
+			padding: 70px 0 20px;
+		}
+		@media screen and (max-width: 480px) {
+			padding: 90px 0 20px;
+		}
+		.inner-container{
+			width: 90%;
+		}
+		.gramplan-title{
+			h1{
+				font-family: 'Bebas Neue', cursive;
+				text-transform: uppercase;
+				font-size: 68px;
+				font-weight: 400;
+				line-height: 1.2;
+				@media screen and (min-width: 1600px) {
+					font-size: 108px;
+				}
+				@media screen and (max-width: 480px) {
+					font-size: 36px;
+					margin-bottom: 15px;
+				}
+			}
+		}
+		.tab-wrapper{
+			padding-left: 25px;
+			margin-top: -7px;
+			@media screen and (max-width: 480px) {
+				padding-left: 10px;
+				margin-top: -16px;
+			}
+			.tab-header-list{
+				padding: 0 25px;
+				font-size: 30px;
+				text-transform: uppercase;
+				position: relative;
+				cursor: pointer;
+				color: #888;
+				@media screen and (min-width: 1600px) {
+					font-size: 50px;
+				}
+				@media screen and (max-width: 980px) {
+					font-size: 20px;
+				}
+				@media screen and (max-width: 480px) {
+					font-size: 16px;
+					padding: 0 10px;
+				}
+				&.active{
+					color: $black;
+					font-weight: bold;
+					div{
+						position: relative;
+						display: inline-block;
+						&:after{
+							position: absolute;
+							bottom: 0;
+							content: '';
+							width: 100%;
+							height: 2px;
+							background-color: $black;
+							left: 0;
+						}
+					}
+				}
+			}
+		}
+		.gramplan-title-desc{
+			font-size: 14px;
+			@media screen and (min-width: 1600px) {
+				font-size: 20px;
+			}
+		}
+		.tab-panel-wrapper{
+			position: relative;
+			margin-top: 30px;
+			border-top: 2px solid $black;
+			padding: 40px 0;
+			@media screen and (min-width: 1600px) {
+				padding: 60px 0;
+				margin-top: 60px;
+			}
+			@media screen and (max-width: 980px) {
+				padding: 20px 0;
+				margin-top: 20px;
+			}
+			.tab-detail-list{
+				display: none;
+				&.active{
+					display: block;
+				}
+				.phase-wrapper{
+					position: relative;
+					width: 100%;
+					.phase-list{
+						width: 90vw;
+						column-count: 2;
+						column-gap: 0;
+						@media screen and (max-width: 980px) {
+							column-count: 1;
+						}
+						ul{
+							padding: 0;
+							margin: 0;
+							li{
+								margin-bottom: 25px;
+								float: none;
+								@media screen and (min-width: 1600px) {
+									margin-bottom: 50px;
+								}
+								@media screen and (max-width: 980px) {
+									margin-bottom: 10px;
+								}
+								@media screen and (max-width: 480px) {
+									margin-bottom: 20px;
+								}
+								.phase-status{
+									width: 68px;
+									height: 68px;
+									background-repeat: no-repeat;
+									background-size: 100%;
+									background-position: 100%;
+									@media screen and (min-width: 1600px) {
+										width: 88px;
+										height: 88px;
+									}
+									@media screen and (max-width: 980px) {
+										width: 48px;
+										height: 48px;
+									}
+									&.done{
+										background-image: url('../img/stamp-done.png');
+									}
+									&.notdone{
+										background-image: url('../img/stamp-notdone.png');
+									}
+								}
+								.phase-detail{
+									padding-left: 15px;
+									width: calc(100% - 68px);
+									.phase-detail-title{
+										font-size: 30px;
+										line-height: 40px;
+										@media screen and (min-width: 1600px) {
+											font-size: 48px;
+											line-height: 60px;
+										}
+										@media screen and (max-width: 980px) {
+											font-size: 20px;
+											line-height: 24px;
+										}
+										@media screen and (max-width: 480px) {
+											font-size: 16px;
+											line-height: 20px;
+										}
+									}
+									.phase-detail-desc{
+										font-size: 12px;
+										max-width: 400px;
+										@media screen and (min-width: 1600px) {
+											font-size: 16px;
+											max-width: 700px;
+										}
+										@media screen and (max-width: 980px) {
+											font-size: 10px;
+											max-width: 600px;
+										}
+									}
+								}
+								&.inner{
+									padding-left: 74px;
+									@media screen and (max-width: 980px) {
+										padding-left: 0;
+									}
+								}
+							}
+						}
+					}
+					.slick-dots{
+						li{
+							background-color: #888;
+							border-radius: 50%;
+							width: 14px;
+							height: 14px;
+							&.slick-active{
+								background-color: $orange;
+							}
+						}
+						@media screen and (min-width: 1600px) {
+							bottom: -100px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#fullpage{
+	display: none;
+}
+
