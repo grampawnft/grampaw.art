@@ -67,45 +67,68 @@ $(document).on('click', '.js-tab',  function(e){
 
 $('.photobanner').each(function(index, value){
 	var _width = ($(this).height())*16;
-	var _left= ($(this).height())*8;
+	var _left= ($(this).height())*8 - 200;
 	$(this).css('min-width',_width+'px');
 	$(this).css('width',_width+'px');
 	if($(this).hasClass('photobanner2')){
-		$(this).css('margin-left','-'+_left+'px');
+		$('.photobanner2').css('margin-left','-'+_left+'px');
 	}
 });
 
 
-$(document).bind("contextmenu",function(e){
-    return false;
+// $(document).bind("contextmenu",function(e){
+//     return false;
+// });
+
+// $(document).keydown(function(e){
+//   	if(event.keyCode == 123) {
+// 	    return false;
+// 	}
+// 	if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+// 	    return false;
+// 	}
+// 	if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+// 	    return false;
+// 	}
+// 	if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+// 	    return false;
+// 	}
+// 	if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+// 	    return false;
+// 	}
+// });
+
+
+$(document).ready(function() {
+	$('.phase-wrapper').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  speed: 300,
+	  arrows: false,
+	  dots: true,
+	  // centerMode: true,
+	  focusOnSelect: true,
+	  variableWidth: true,
+	  infinite: false
+	});
+	$('.image-wrapper').slick({
+      	autoplay: true, /* this is the new line */
+       	infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        touchThreshold: 1000,
+	});
+
+	$('.arrow-slider-wrapper .arrow-right').click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		$('.bounty-slider-wrapper .image-wrapper').slick('slickNext');
+	});
+	$('.arrow-slider-wrapper .arrow-left').click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		$('.bounty-slider-wrapper .image-wrapper').slick('slickPrev');
+	});
 });
 
-$(document).keydown(function(e){
-  	if(event.keyCode == 123) {
-	    return false;
-	}
-	if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-	    return false;
-	}
-	if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-	    return false;
-	}
-	if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-	    return false;
-	}
-	if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-	    return false;
-	}
-});
 
-$('.phase-wrapper').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  speed: 300,
-  arrows: false,
-  dots: true,
-  // centerMode: true,
-  focusOnSelect: true,
-  variableWidth: true,
-  infinite: false
-});
