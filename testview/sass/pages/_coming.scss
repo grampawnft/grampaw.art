@@ -1,0 +1,231 @@
+.container-coming{
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-image: url('../img/bg.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 15px 30px;
+	@media screen and (min-width: 1600px) {
+		padding: 25px 50px;
+	}
+	.header-coming{
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 15px;
+		border-bottom: 1px solid $black;
+		align-items: center;
+		margin-bottom: 60px;
+		@media screen and (min-width: 1600px) {
+			padding-bottom: 25px;
+			margin-bottom: 100px;
+		}
+		@media screen and (max-width: 480px) {
+			flex-direction: column;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		h1{
+			font-size: 26px;
+			line-height: 1;
+			margin-bottom: 5px;
+			@media screen and (min-width: 1600px) {
+				font-size: 34px;
+				margin-bottom: 10px;
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 20px;
+			}
+		}
+		h2{
+			font-size: 14px;
+			@media screen and (min-width: 1600px) {
+				font-size: 18px;
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 12px;
+				margin-bottom: 15px;
+			}
+		}
+		.logo1{
+			width: 125px;
+			margin-right: 10px;
+			margin-top: 10px;
+			@media screen and (min-width: 1600px) {
+				width: 170px;
+				margin-right: 20px;
+			}
+			@media screen and (max-width: 480px) {
+				width: 100px;
+			}
+		}
+		.logo2{
+			width: 100px;
+			@media screen and (min-width: 1600px) {
+				width: 130px;
+			}
+			@media screen and (max-width: 480px) {
+				width: 80px;
+			}
+		}
+	}
+
+	.content-coming{
+		width: 100%;
+		padding: 0 9%;
+		@media screen and (max-width: 480px) {
+			padding: 0 5%;
+		}
+		h1{
+			font-size: 56px;
+			line-height: 1;
+			margin-bottom: 25px;
+			@media screen and (min-width: 1600px) {
+				font-size: 86px;
+				margin-bottom: 40px;
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 40px;
+			}
+		}
+		p{
+			padding-left: 40px;
+			font-size: 16px;
+			margin-bottom: 50px;
+			@media screen and (min-width: 1600px) {
+				padding-left: 60px;
+				font-size: 26px;
+				margin-bottom: 70px;
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 14px;
+				padding-left: 0;
+			}
+		}
+		.socmed-wrapper{
+			padding-left: 40px;
+			@media screen and (min-width: 1600px) {
+				padding-left: 60px;
+			}
+			@media screen and (max-width: 480px) {
+				padding-left: 0;
+			}
+			.disclaim{
+				font-size: 18px;
+				margin-right: 1em;
+				@media screen and (min-width: 1600px) {
+					font-size: 28px;
+				}
+				@media screen and (max-width: 480px) {
+					width: 100%;
+					margin-right: 0;
+					margin-bottom: 15px;
+				}
+			}
+		}
+		.socmed-circle{
+			width: 40px;
+			height: 40px;
+			background-color: $black;
+			border-radius: 50%;
+			margin-right: 5px;
+			position: relative;
+			transition: .3s all;
+			@media screen and (min-width: 1600px) {
+				width: 52px;
+				height: 52px;
+				margin-right: 10px;
+			}
+			@media screen and (max-width: 480px) {
+				width: 35px;
+				height: 35px;
+			}
+			&:hover{
+				background-color: #bfa566;
+			}
+			img{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 20px;
+				@media screen and (min-width: 1600px) {
+					width: 26px;
+				}
+				@media screen and (max-width: 480px) {
+					width: 18px;
+				}
+			}
+		}
+		.right-content{
+			padding-left: 120px;
+			position: relative;
+			@media screen and (max-width: 980px) {
+				margin-top: 100px;
+				padding-left: 0;
+			}
+			@media screen and (max-width: 480px) {
+				margin-top: 80px;
+			}
+			.teaser-wrapper{
+				position: relative;
+				width: 340px;
+				height: 340px;
+				background-color: #2e2e2e52;
+				margin-top: 20px;
+				@media screen and (min-width: 1600px) {
+					width: 520px;
+					height: 520px;
+					margin-top: 40px;
+				}
+				@media screen and (max-width: 980px) {
+					position: relative;
+					margin: 0 auto;
+					width: 500px;
+					height: 500px;
+					margin-bottom: 60px;
+				}
+				@media screen and (max-width: 480px) {
+					width: 300px;
+					height: 300px;
+				}
+				img{
+					position: absolute;
+					left: -25px;
+					top: -25px;
+					width: 100%;
+					height: 100%;
+					@media screen and (max-width: 480px) {
+						left: -10px;
+						top: -10px;
+					}
+				}
+			}
+		}
+
+		.pull-left{
+			@media screen and (max-width: 980px) {
+				width: 100%;
+			}
+		}
+		
+	}
+	.copyright{
+		position: fixed;
+		bottom: 10px;
+		right: 25px;
+		font-size: 14px;
+		@media screen and (min-width: 1600px) {
+			bottom: 20px;
+			right: 35px;
+			font-size: 18px;
+		}
+		@media screen and (max-width: 480px) {
+			position: relative;
+			text-align: right;
+			width: 100%;
+			right: 0;
+		}
+	}
+}
