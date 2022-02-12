@@ -49,7 +49,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">gallery
+                                <a class="undcons" href="#">gallery
                                     <span class="hover-indicator" style="left: -10px;"> 
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 414.84 111.47" class="circle-3">
                                         <path fill="none" stroke="#c19d47" stroke-miterlimit="10" stroke-width="25px" class="hover-path" d="M180.35,13.55c34.13-1.2,68.69-2.81,102.4,4.3,16.68,3.52,34,8,42.07,24.47,6.87,14.12.21,30.15-13.29,37-14.74,7.47-31.66,8.88-47.81,10.7-37.22,4.19-74.64,6.71-112.06,8.23-26.8,1.09-53.5,1-80.27-.54q-13.88-.54-27.64-2.36a52.37,52.37,0,0,1-16.92-3.74,26.59,26.59,0,0,1-13.5-18.42c-1.42-6.8-1.45-11.7,3.62-16.94,10.74-11.1,28.44-15.61,42.88-20.07a334.43,334.43,0,0,1,58.34-10q39.16-5.09,78.66-6.47c49.34-2.31,98.76-1.35,148.06,1.27,19.22,1,38.35,2.18,57.45,4.55"></path>
@@ -99,17 +99,17 @@
                     <div class="header-desc">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a target="_blank" href="https://twitter.com/GrampawNFT">
                                     <img src="img/ic-twitter.png">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a target="_blank" href="https://discord.gg/FtyxbfmSMv">
                                     <img src="img/ic-discord.png">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a target="_blank" href="https://www.instagram.com/grampawnft">
                                     <img src="img/ic-ig.png">
                                 </a>
                             </li>
@@ -132,7 +132,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a class="undcons" href="#">
                                     <span data-content="Gallery"></span>
                                     Gallery
                                 </a>
@@ -147,6 +147,23 @@
                                 <a href="#">
                                     <span data-content="Faq"></span>
                                     Faq
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="socmed-mobile">
+                            <li>
+                                <a target="_blank" href="https://twitter.com/GrampawNFT">
+                                    <img src="img/ic-twitter.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://discord.gg/FtyxbfmSMv">
+                                    <img src="img/ic-discord.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.instagram.com/grampawnft">
+                                    <img src="img/ic-ig.png">
                                 </a>
                             </li>
                         </ul>
@@ -592,7 +609,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script type="text/javascript">
-            $(document).ready(function() {
+            $(window).on('load', function () {
                 setTimeout(function(){ 
                     $('.loader-wrapper').animate({'height':'0'},600);
                     $('.loader-wrapper').hide(1000);
