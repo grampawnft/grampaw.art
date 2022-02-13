@@ -111,6 +111,17 @@ $(document).ready(function() {
 	  variableWidth: true,
 	  infinite: false
 	});
+	$('.faq-slider-wrapper').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  speed: 300,
+	  arrows: false,
+	  dots: true,
+	  // centerMode: true,
+	  focusOnSelect: true,
+	  variableWidth: true,
+	  infinite: false
+	});
 	$('.image-wrapper').slick({
       	autoplay: true, /* this is the new line */
        	infinite: true,
