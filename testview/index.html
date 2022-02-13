@@ -481,24 +481,28 @@
                             </ul>
                         </div>
                     </div>
-                    <img src="img/logo-big.png" class="logo-big absolute-center">
+                    <div class="logo-big-wrapper">
+                        <img src="img/logo-big.png" class="logo-big">
+                    </div>
                 </div>
                 <div class="section fifth-section">
                     <div class="inner-container">
-                        <div class="inline gramplan-title">
-                            <h1>The Gramplan</h1>
-                        </div>
-                        <div class="inline tab-wrapper">
-                            <div class="clearfix">
-                                <div class="pull-left tab-header-list js-tab active" data-tab="phase1">
-                                    <div>phase I</div>
-                                </div>
-                                <div class="pull-left tab-header-list js-tab" data-tab="phase2">
-                                    <div>phase II</div>
+                        <div class="header-gramplan-wrapper">
+                            <div class="inline gramplan-title">
+                                <h1>The Gramplan</h1>
+                            </div>
+                            <div class="inline tab-wrapper">
+                                <div class="clearfix">
+                                    <div class="pull-left tab-header-list js-tab active" data-tab="phase1">
+                                        <div>phase I</div>
+                                    </div>
+                                    <div class="pull-left tab-header-list js-tab" data-tab="phase2">
+                                        <div>phase II</div>
+                                    </div>
                                 </div>
                             </div>
+                            <p class="gramplan-title-desc">After feeding our starving pug to make all of this possible, here’s our Gramplan (also known widely as roadmap in other projects)</p>
                         </div>
-                        <p class="gramplan-title-desc">After feeding our starving pug to make all of this possible, here’s our Gramplan (also known widely as roadmap in other projects)</p>
                         <div class="tab-panel-wrapper">
                             <div class="tab-detail-list active" id="phase1">
                                 <div class="phase-wrapper">
@@ -770,9 +774,67 @@
                             }
                             if(index == 2){
                                 $('#myVideo').show();
+                                $('.header-news-title .title1').fadeIn(10);
+                                $('.header-news-title .title1').addClass('animated-in');
+                                $('.header-news-title .title2').fadeIn(10);
+                                $('.header-news-title .title2').addClass('animated-in');
+                                $('.header-news-title img').fadeIn(10);
+                                $('.header-news-title img').addClass('animated-in');
+                                $('.livingon').fadeIn(10);
+                                $('.livingon').addClass('animated-in');
+                                $('.header-news-addon .header-logo').fadeIn(10);
+                                $('.header-news-addon .header-logo').addClass('animated-in');
+                                $('.header-news-addon .header-desc').fadeIn(10);
+                                $('.header-news-addon .header-desc').addClass('animated-in');
+                                $('.second-section .left-section').fadeIn(10);
+                                $('.second-section .left-section').addClass('animated-in');
+                                $('.second-section .right-section').fadeIn(10);
+                                $('.second-section .right-section').addClass('animated-in');
                             }
                             if(index == 3){
                                 $('#myVideo').hide();
+                                $('.third-section .left-section').fadeIn(10);
+                                $('.third-section .left-section').addClass('animated-in');
+                                $('.third-section .right-section').fadeIn(10);
+                                $('.third-section .right-section').addClass('animated-in');
+                                $('.third-section .ic_solanalysis').fadeIn(10);
+                                $('.third-section .ic_solanalysis').addClass('animated-in');
+                                $('.third-section .ic_nftcalendar').fadeIn(10);
+                                $('.third-section .ic_nftcalendar').addClass('animated-in');
+                                $('.third-section .ic_howrare').fadeIn(10);
+                                $('.third-section .ic_howrare').addClass('animated-in');
+                                $('.third-section .ic_upcoming').fadeIn(10);
+                                $('.third-section .ic_upcoming').addClass('animated-in');
+                                $('.third-section .featured').fadeIn(10);
+                                $('.third-section .featured').addClass('animated-in');
+                            }
+                            if(index == 4){
+                                $('.fourth-section .logo-big').fadeIn(10);
+                                $('.fourth-section .logo-big').addClass('animated-in');
+                            }
+                            if(index == 5){
+                                $('.fifth-section .header-gramplan-wrapper').fadeIn(10);
+                                $('.fifth-section .header-gramplan-wrapper').addClass('animated-in');
+                                $('.fifth-section .tab-panel-wrapper').fadeIn(10);
+                                $('.fifth-section .tab-panel-wrapper').addClass('animated-in');
+                            }
+                            if(index == 6){
+                                $('.sixth-section .left-section').fadeIn(10);
+                                $('.sixth-section .left-section').addClass('animated-in');
+                                $('.sixth-section .right-section').fadeIn(10);
+                                $('.sixth-section .right-section').addClass('animated-in');
+                            }
+                            if(index == 7){
+                                $('.seventh-section .bg-faq').fadeIn(10);
+                                $('.seventh-section .bg-faq').addClass('animated-in');
+                                $('.seventh-section .content-seventh').fadeIn(10);
+                                $('.seventh-section .content-seventh').addClass('animated-in');
+                            }
+                            if(index == 8){
+                                $('.eight-section .bg-team').fadeIn(10);
+                                $('.eight-section .bg-team').addClass('animated-in');
+                                $('.eight-section .content-team').fadeIn(10);
+                                $('.eight-section .content-team').addClass('animated-in');
                             }
                         },
                         'onLeave': function(index, nextIndex, direction){
