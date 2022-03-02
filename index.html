@@ -649,6 +649,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="section paws-section">
+                    <div class="koinkoin1"></div>
+                    <div class="koinkoin2"></div>
+                    <div class="koinkoin3"></div>
+                    <div class="inner-container clearfix">
+                        <div class="pull-left left-section">
+                            <img src="img/coingif.gif">
+                        </div>
+                        <div class="pull-left right-section">
+                            <div class="caption1">what is</div>
+                            <h1>$paws token?</h1>
+                            <p>$PAWS is a utility token. Every Grampaw NFT yields 10 $PAWS a day, for the next 5 years until all supplies are circulated. $PAWS can be saved and redeemed for future collections such as 2nd phase Grampaw - Miniature; access Grampaw Shop; and other future creative developments.</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="section sixth-section">
                     <div class="clearfix inner-container">
                         <div class="pull-left left-section">
@@ -857,7 +872,7 @@
                     $('#fullpage').fullpage({
                         'verticalCentered': false,
                         'css3': true,
-                        'anchors': ['grampaw', 'about', 'pawback', 'mixmax', 'gramplan', 'bounty', 'faq', 'team'],
+                        'anchors': ['grampaw', 'about', 'pawback', 'mixmax', 'gramplan', 'paws', 'bounty', 'faq', 'team'],
                         'afterLoad': function(anchorLink, index){
                             if(index == 1){
                             }
@@ -908,18 +923,24 @@
                                 $('.fifth-section .tab-panel-wrapper').addClass('animated-in');
                             }
                             if(index == 6){
+                                $('.paws-section .left-section').fadeIn(10);
+                                $('.paws-section .left-section').addClass('animated-in');
+                                $('.paws-section .right-section').fadeIn(10);
+                                $('.paws-section .right-section').addClass('animated-in');
+                            }
+                            if(index == 7){
                                 $('.sixth-section .left-section').fadeIn(10);
                                 $('.sixth-section .left-section').addClass('animated-in');
                                 $('.sixth-section .right-section').fadeIn(10);
                                 $('.sixth-section .right-section').addClass('animated-in');
                             }
-                            if(index == 7){
+                            if(index == 8){
                                 $('.seventh-section .bg-faq').fadeIn(10);
                                 $('.seventh-section .bg-faq').addClass('animated-in');
                                 $('.seventh-section .content-seventh').fadeIn(10);
                                 $('.seventh-section .content-seventh').addClass('animated-in');
                             }
-                            if(index == 8){
+                            if(index == 9){
                                 $('.eight-section .bg-team').fadeIn(10);
                                 $('.eight-section .bg-team').addClass('animated-in');
                                 $('.eight-section .content-team').fadeIn(10);
