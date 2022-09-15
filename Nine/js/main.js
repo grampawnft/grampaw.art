@@ -50,6 +50,10 @@ barba.init({
 	views: [{
 	    namespace: 'home',
 	    afterEnter(data) {
+	    	if(!window.location.hash) {
+		        window.location = window.location + '#loaded';
+		        window.location.reload();
+		    }
 	    	var tl = gsap.timeline();
 
 	    	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
