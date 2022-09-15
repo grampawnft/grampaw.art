@@ -15,8 +15,13 @@ function contentAnimation(){
 	var tl = gsap.timeline();
 
 	tl.from('header', { duration: 1.5, opacity: 0})
-	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
-	tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2')
+
+	if (document.body.classList.contains('body-home'))
+	{
+	  	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
+		tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2')
+		slideshow.init();
+	}
 
 }
 
