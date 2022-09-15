@@ -18,13 +18,6 @@ function contentAnimation(){
 
 }
 
-function leaveAnimation(){
-	var tl = gsap.timeline();
-	
-	tl.to('.wrapper', { duration: .5, opacity: 1})
-	tl.to('.wrapper', { duration: .5, opacity: 0})
-}
-
 function delay(n){
 	n = n || 2000;
 	return new Promise(done => {
@@ -42,7 +35,6 @@ barba.init({
 
 			const done = this.async();
 			pageTransition();
-			leaveAnimation();
 			await delay(1500);
 			done();
 
