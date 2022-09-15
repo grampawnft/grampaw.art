@@ -1,5 +1,3 @@
-// vendors
-@import "vendors/plugins";
 
 // components
 @import "components/variable";
@@ -11,5 +9,9 @@
 @import "components/table";
 @import "components/animation";
 
+// vendors
+@import "vendors/plugins";
+
 // pages
 @import "pages/global";
+@import "pages/home";

@@ -8,6 +8,16 @@ function pageTransition(){
 	tl.to('ul.transition li', { duration: .5, scaleY: 0, transformOrigin: "bottom left", stagger: .1, delay: .1})
 }
 
+function contentAnimation(){
+
+	var tl = gsap.timeline();
+
+	tl.from('header', { duration: 1.5, opacity: 0})
+	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
+	tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2')
+
+}
+
 function delay(n){
 	n = n || 2000;
 	return new Promise(done => {
@@ -31,10 +41,11 @@ barba.init({
 		},
 
 		async enter(data){
-			// contentAnimation()
+			contentAnimation()
 		},
 		async once(data){
-			// contentAnimation()
+			contentAnimation()
 		}
 	}]
 })
+

@@ -22,14 +22,31 @@ body, html { font-size: 100%; 	padding: 0; margin: 0; overflow: hidden;}
 	clear: both;
 }
 
+ul{
+	padding: 0;
+	margin: 0;
+	li{
+		list-style: none;
+	}
+}
+
 body {
     font-family: opensans;
-    color: $gray;
-    background: $bg-gray;
+    color: $black;
+    background: #fff;
     line-height: 1.42857143;
     overflow-x: hidden; 
     font-size: 14px;
     height: 100vh;
+    --color-text: #fff;
+	--color-bg: #000;
+	--color-link: #fff;
+	--color-link-hover: #fff;
+	--color-frame: #ff5ba4;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -63,7 +80,26 @@ a:hover {
 }
 
 .wrapper{
-
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	.container{
+		max-width: 1440px;
+		@media screen and (max-width: 1200px) {
+	       max-width: 1140px;
+	    }
+	    @media screen and (max-width: 992px) {
+	       max-width: 960px;
+	    }
+	    @media screen and (max-width: 576px) {
+	       max-width: 540px;
+	    }
+	}
+	.section{
+		height: 100vh;
+		background-color: #fff;
+	}
 }
 
 ul.transition{
@@ -75,11 +111,13 @@ ul.transition{
 	top: 0;
 	left: 0;
 	margin: 0;
+	padding: 0;
 	pointer-events: none;
 	li{
 		transform: scaleY(0);
 		background: $green;
 		width: 33.3334%;
+		list-style: none;
 	}
 }
 
