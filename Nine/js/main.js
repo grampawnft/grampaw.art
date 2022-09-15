@@ -16,31 +16,8 @@ function contentAnimation(){
 
 	tl.from('header', { duration: 1.5, opacity: 0})
 
-	if (document.body.classList.contains('body-home'))
-	{
-	  	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
-		tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2')
-		// slideshow.init();
-		preloadImages('.slide__img').then(() => {
-		    // remove loader (loading class) 
-		    document.body.classList.remove('loading');
-		    // initialize the slideshow and navigation
-		    const slideshow = new Slideshow(document.querySelector('.slideshow'));    
-		    const navigation = new Navigation(document.querySelector('.slides-nav'));
-		    // navigation events
-		    navigation.DOM.ctrls.next.addEventListener('click', () => slideshow.next());
-		    navigation.DOM.ctrls.prev.addEventListener('click', () => slideshow.prev());
-		    // set the initial navigation current slide value
-		    navigation.updateCurrent(slideshow.current);
-		    // set the navigation total number of slides
-		    navigation.DOM.total.innerHTML = slideshow.current < 10 ? `0${slideshow.slidesTotal}` : slideshow.slidesTotal;
-
-		    setInterval(function () {slideshow.next()}, 6000);
-
-		    // when a new slide is shown, update the navigation current slide value
-		    slideshow.on('updateCurrent', position => navigation.updateCurrent(position));
-		});
-	}
+	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
+	tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2')
 
 }
 
