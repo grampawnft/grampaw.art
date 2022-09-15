@@ -7507,9 +7507,6 @@ function (_EventEmitter) {
         opacity: 0
       });
 
-      _gsap.gsap.set(this.slides[this.current].DOM.imgLogo, {
-        opacity: 1
-      });
     } // navigate to the next slide
 
   }, {
@@ -7568,7 +7565,8 @@ function (_EventEmitter) {
       .set(upcomingSlide.DOM.img, {
         y: direction === 'next' ? '-50%' : '50%'
       }, 'start').set(upcomingSlide.DOM.imgLogo, {
-        y: direction === 'next' ? '100%' : '-100%'
+        y: direction === 'next' ? '100%' : '-100%',
+        opacity: 0
       }, 'start').set(upcomingSlide.DOM.text, {
         y: direction === 'next' ? '100%' : '-100%'
       }, 'start').set(upcomingSlide.DOM.link, {
