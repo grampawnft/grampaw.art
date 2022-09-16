@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="js">
-    <head>      
-        <meta charset="utf-8">
+    <head>		
+    	<meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Index</title>
         <meta name="description" content="">
@@ -105,7 +105,7 @@
                                     </svg>
                                     <span class="js-number-cart number-cart-mobile active">2</span>
                                 </a>
-                                <a href="#" class="hamburger-menu">
+                                <a class="hamburger-menu js-hamburger">
                                     <svg viewBox="0 0 23 23" fill="none">
                                           <rect x="0.5" y="0.5" width="9" height="9" rx="1.9" fill="none" stroke="#FFFFFF"></rect>
                                           <rect y="13" width="10" height="10" rx="2.4" fill="#FFFFFF"></rect>
@@ -122,7 +122,7 @@
                         <div class="minicart-container">
                             <div class="mini-content">
                                 <div class="minicart-head">
-                                    <a href="#" class="js-close-minicart">
+                                    <a class="js-close-minicart">
                                         <svg viewBox="0 0 298.667 298.667">
                                             <g>
                                                 <g>
@@ -227,26 +227,26 @@
                     </div>
                     <div class="mobile-menu-list">
                         <ul class="tab-content-menu">
-                            <li class="toptab">
-                                <a class="toptab-left">
+                            <li class="toptab active">
+                                <a class="toptab-left" data-tab="tab-menulist">
                                     <svg viewBox="0 0 23 23" fill="none" class="toptab-icon">
-                                          <rect x="0.5" y="0.5" width="9" height="9" rx="1.9" fill="none" stroke="#FFFFFF"></rect>
-                                          <rect y="13" width="10" height="10" rx="2.4" fill="#FFFFFF"></rect>
-                                          <rect x="13" width="10" height="10" rx="2.4" fill="#FFFFFF"></rect>
-                                          <rect x="13" y="13" width="10" height="10" rx="2.4" fill="#FFFFFF"></rect>
+                                          <rect x="0.5" y="0.5" width="9" height="9" rx="1.9" class="rect1" stroke="#FFFFFF"></rect>
+                                          <rect y="13" width="10" height="10" rx="2.4" class="rect"></rect>
+                                          <rect x="13" width="10" height="10" rx="2.4" class="rect"></rect>
+                                          <rect x="13" y="13" width="10" height="10" rx="2.4" class="rect"></rect>
                                     </svg>
                                     <span>Menu</span>
                                 </a>
                             </li>
                             <li class="toptab">
-                                <a class="toptab-right">
+                                <a class="toptab-right" data-tab="tab-menulogin">
                                     <svg viewBox="0 0 400 400" class="toptab-icon"><g transform="matrix(1.3333333,0,0,-1.3333333,0,400)" id="g10"><g transform="scale(0.1)" id="g12"><path id="path14" d="m 1506.87,2587.11 c -225.04,0 -408.14,-183.08 -408.14,-408.11 0,-225.06 183.1,-408.13 408.14,-408.13 225.02,0 408.13,183.07 408.13,408.13 0,225.03 -183.11,408.11 -408.13,408.11 z m 0,-1038.56 c -347.64,0 -630.432,282.79 -630.432,630.45 0,347.63 282.792,630.43 630.432,630.43 347.63,0 630.42,-282.8 630.42,-630.43 0,-347.66 -282.79,-630.45 -630.42,-630.45 v 0"></path><path id="path16" d="M 399.648,361.789 H 2614.07 c -25.06,261.531 -139.49,503.461 -327.47,689.831 -124.25,123.14 -300.78,193.96 -483.86,193.96 h -591.76 c -183.61,0 -359.601,-70.82 -483.863,-193.96 C 539.148,865.25 424.719,623.32 399.648,361.789 Z M 2730.69,139.461 H 283.035 c -61.558,0 -111.16,49.59 -111.16,111.16 0,363.438 141.68,704 398.32,959.019 165.657,164.55 399.414,258.82 640.785,258.82 h 591.76 c 241.94,0 475.14,-94.27 640.8,-258.82 256.63,-255.019 398.31,-595.581 398.31,-959.019 0,-61.57 -49.59,-111.16 -111.16,-111.16 v 0"></path></g></g></svg>
                                     <span>Login</span>
                                 </a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-panel" style="display: block">
+                            <div class="tab-panel" id="tab-menulist" style="display: block">
                                 <div class="menu-horizon-list">
                                     <a href="index.html">Home</a>
                                 </div>
@@ -263,7 +263,64 @@
                                     <a href="#" class="has-sub">Download</a>
                                 </div>
                             </div>
-                            <div class="tab-panel"></div>
+                            <div class="tab-panel" id="tab-menulogin">
+                                <div class="menulogin-wrapper">
+                                    <div class="form-login">
+                                        <div class="form-group mb10px">
+                                            <div class="mb0">
+                                                <input type="text" name="Username" id="Username" class="form-control login-input" required/>
+                                                <label>Username</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <input type="password" name="password" id="password" class="form-control login-input" autocomplete="off" required/>
+                                                <label>Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check">
+                                            <a href="#">Forgot your passowrd?</a>
+                                        </div>
+                                        <button type="" class="btnNine btnNine-create" onclick="location.href='index.html'">
+                                            <svg viewBox="0 0 1024 1024">
+                                               <circle cx="512" cy="512" r="512" style="fill:#fff"/>
+                                               <path d="m458.15 617.7 18.8-107.3a56.94 56.94 0 0 1 35.2-101.9V289.4h-145.2a56.33 56.33 0 0 0-56.3 56.3v275.8a33.94 33.94 0 0 0 3.4 15c12.2 24.6 60.2 103.7 197.9 164.5V622.1a313.29 313.29 0 0 1-53.8-4.4zM656.85 289h-144.9v119.1a56.86 56.86 0 0 1 35.7 101.4l18.8 107.8A320.58 320.58 0 0 1 512 622v178.6c137.5-60.5 185.7-139.9 197.9-164.5a33.94 33.94 0 0 0 3.4-15V345.5a56 56 0 0 0-16.4-40 56.76 56.76 0 0 0-40.05-16.5z" style="fill:#363c4f"/>
+                                            </svg>
+                                            Log In
+                                        </button>
+                                        <div class="or-create">
+                                            <span>or</span>
+                                            <div>
+                                                <a class="register-btn">Register Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-register" style="display: none">
+                                        <div class="form-group mb10px">
+                                            <div class="mb0">
+                                                <input type="text" name="Email" id="Email" class="form-control login-input" required/>
+                                                <label>Email Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <input type="password" name="password" id="password" class="form-control login-input" autocomplete="off" required/>
+                                                <label>Password</label>
+                                            </div>
+                                        </div>
+                                        <button type="" class="btnNine btnNine-create" onclick="location.href='index.html'">
+                                            Register
+                                        </button>
+                                        <div class="or-create">
+                                            <span>or</span>
+                                            <div>
+                                                <a class="login-btn">Back to login</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="close-menu-mobile js-close-menu-mobile">close</div>
                         </div>
                     </div>
                     <div class="bg-overlay"></div>
@@ -347,7 +404,100 @@
                         </nav>
                     </div>
 
-                    <div class="section"></div>
+                    <div class="section product-display-home">
+                        <div class="container">
+                            <div class="template-container">
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/V8%20-%20HiLo%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="headlight">headlight</div>
+                                                <p class="template-product-desc">Brighten your every miles</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/9POWER%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="power">Power</div>
+                                                <p class="template-product-desc">Maximum Performance</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/K80%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="horn">horn</div>
+                                                <p class="template-product-desc">Sound Blast and Explode</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/KEYLESS%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="keyless">keyless</div>
+                                                <p class="template-product-desc">Security for Your Vehicle</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/Relay%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="electrical">electrical</div>
+                                                <p class="template-product-desc">Your Automotive Electrical Needs</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/AP%20-%201%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="glow care">glow care</div>
+                                                <p class="template-product-desc">Care in style</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header special-header">
+                                            <img class="special-img" src="https://nine.co.id/assets/media/images/Jas%20Hujan%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="apparel">apparel</div>
+                                                <p class="template-product-desc">Style &amp; Comfort Apparel</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="template-item">
+                                    <div class="template-card">
+                                        <div class="template-card-header">
+                                            <img src="https://nine.co.id/assets/media/images/Holder%20-%20White.jpg">
+                                            <div class="template-card-desc">
+                                                <div class="template-product-name" data-text="holder">holder</div>
+                                                <p class="template-product-desc">Robust mounting solution</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 
