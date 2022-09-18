@@ -1,0 +1,21 @@
+.wow{
+	&.slideUp{
+		opacity: 0;
+		transition: all 1s linear;
+		transform: translate3d(0px, 50px, 0px);
+		transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	}
+	&.fadeInSmall{
+		opacity: 0;
+		transition: all .4s linear;
+		transform-origin: center;
+		width: 0;
+		&.in-view{
+			width: 100%;
+		}
+	}
+	&.in-view{
+		opacity: 1;
+		transform: translate3d(0px, 0, 0px)
+	}
+}

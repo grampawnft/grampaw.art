@@ -1,13 +1,3 @@
-// GSAP scrolltrigger
-var tl = gsap.timeline();
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.to(".template-container", {
-	scrollTrigger: ".template-container",
-	translateY: 0,
-	opacity: 1,
-	duration: 1
-});
 
 function pageTransition(){
 
@@ -72,6 +62,83 @@ barba.init({
 	  }]
 })
 
+gsap.registerPlugin(ScrollTrigger);
+
+function batch(targets, vars) {
+  let varsCopy = {},
+      interval = vars.interval || 0.1,
+      proxyCallback = (type, callback) => {
+        let batch = [],
+            delay = gsap.delayedCall(interval, () => {callback(batch); batch.length = 0;}).pause();
+        return self => {
+          batch.length || delay.restart(true);
+          batch.push(self.trigger);
+          vars.batchMax && vars.batchMax <= batch.length && delay.progress(1);
+        };
+      },
+      p;
+  for (p in vars) {
+    varsCopy[p] = (~p.indexOf("Enter") || ~p.indexOf("Leave")) ? proxyCallback(p, vars[p]) : vars[p];
+  }
+  gsap.utils.toArray(targets).forEach(target => {
+    let config = {};
+    for (p in varsCopy) {
+      config[p] = varsCopy[p];
+    }
+    config.trigger = target;
+    ScrollTrigger.create(config);
+  });
+}
+
+batch(".template-item", {
+  interval: 0.1, 
+  batchMax: 8,   
+  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
+  onLeave: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6}),
+  onEnterBack: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
+  onLeaveBack: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6})
+});
+
+batch(".news-item", {
+  interval: 0.1, 
+  batchMax: 3,   
+  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
+  onLeave: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6}),
+  onEnterBack: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
+  onLeaveBack: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6})
+});
+
+gsap.to('.info-banner',{
+	scrollTrigger: {
+		trigger: '.info-banner',
+		scrub: 1
+	},
+	duration: .6,
+	y: 15,
+	autoAlpha: 1,
+	ease: "back.out(3)"
+});
+
+gsap.to('.image-banner',{
+	scrollTrigger: {
+		trigger: '.image-banner',
+		scrub: 1,
+		start: 'center 80%',
+	},
+	duration: 2,
+	scale: 1,
+	opacity: 1,
+	ease: "back.out(2)"
+}, );
+
+gsap.to('.footer',{
+	scrollTrigger: {
+		trigger: '.footer',
+	},
+	duration: 1.5,
+	opacity: 1,
+	ease: "power4.out)"
+}, );
 
 
 // form js
@@ -242,3 +309,30 @@ $(document).on('click', '.login-btn',  function(e){
 	_formlogin.fadeIn(200);
 
 });
+
+// var $animation_elements = $('.wow');
+// var $window = $(window);
+
+// function check_if_in_view() {
+//   var window_height = $window.height();
+//   var window_top_position = $window.scrollTop();
+//   var window_bottom_position = (window_top_position + window_height);
+ 
+//   $.each($animation_elements, function() {
+//     var $element = $(this);
+//     var element_height = $element.outerHeight();
+//     var element_top_position = $element.offset().top;
+//     var element_bottom_position = (element_top_position + element_height);
+ 
+//     //check to see if this current container is within viewport
+//     if ((element_bottom_position >= window_top_position) &&
+//         (element_top_position <= window_bottom_position)) {
+//       $element.addClass('in-view');
+//     } else {
+//       $element.removeClass('in-view');
+//     }
+//   });
+// }
+
+// $window.on('scroll resize', check_if_in_view);
+// $window.trigger('scroll');

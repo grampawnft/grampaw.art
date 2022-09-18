@@ -11,8 +11,6 @@
 		justify-content: center;
 		width: 100%;
 		background-color: #fff;
-		opacity: 0;
-		transform: translateY(20px);
 		.template-item{
 			padding: 10px;
 			flex-grow: 0;
@@ -20,7 +18,8 @@
 			flex-basis: 25%;
 			cursor: pointer;
 			margin-bottom: 25px;
-
+			opacity: 0;
+			transform:translateY(50px);
 			@media screen and (max-width: 576px) {
 		       	max-width: 50%;
 				flex-basis: 50%;
@@ -176,14 +175,22 @@
 		.info-banner{
 			flex-direction: column;
 			align-items: flex-start;
+			opacity: 0;
+			transform: translateY(100px);
 			.btnNine-default{
 				background: #e16969;
 				&:hover{
 					background: darken(#e16969, 10%);
 				}
 			}
+			@media screen and (max-width: 576px) {
+		       	margin-bottom: 25px;
+		    }
 		}
 		.image-banner{
+			transform: scale(0);
+			transform-origin: center center;
+			opacity: 0;
 			svg{
 				width: 60%;
 			}
@@ -206,6 +213,8 @@
 			flex-basis: 33.3334%;
 			cursor: pointer;
 			min-height: 450px;
+			opacity: 0;
+			transform: translateY(50px);
 			@media screen and (max-width: 576px) {
 		       	max-width: 100%;
 				flex-basis: 100%;
