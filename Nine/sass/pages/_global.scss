@@ -45,7 +45,7 @@ body {
     background: #fff;
     line-height: 1.42857143;
     overflow-x: hidden; 
-    font-size: 14px;
+    font-size: 15px;
     height: 100vh;
     --color-text: #fff;
 	--color-bg: #000;
@@ -101,14 +101,13 @@ a:hover {
 	       // max-width: 960px;
 	    }
 	    @media screen and (max-width: 576px) {
-	       // max-width: 540px;
+	       max-width: 92vw;
 	    }
 	}
 	.section{
 		position: relative;
 	    width: 100vw;
 	    top: 80px;
-		background-color: #fff;
 	}
 }
 
@@ -129,5 +128,86 @@ ul.transition{
 		width: 33.3334%;
 		list-style: none;
 	}
+}
+
+footer{
+	position: relative;
+	width: 100vw;
+    background-color: $black;
+    color: #fff;
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    .footer-wrapper{
+    	position: relative;
+    	width: 100%;
+    	padding: 0 12vw;
+    	.inner-footer{
+    		width: 100%;
+    		font-size: 14px;
+    		display: flex;
+    		@media screen and (max-width: 576px) {
+		       	font-size: 12px;
+		       	flex-direction: column;
+		    }
+    		.subfooter{
+    			width: 30%;
+    			@media screen and (max-width: 576px) {
+			       	width: 100%;
+			    }
+    			&:nth-child(2){
+    				width: 40%;
+    				padding: 0 40px;
+    				@media screen and (max-width: 576px) {
+				       	width: 100%;
+				       	padding: 0;
+				    }
+    			}
+    			.logo-footer{
+    				margin-bottom: 24px;
+    				width: 205px;
+    			}
+    			.padding-footer{
+    				padding-left: 35px;
+    				@media screen and (max-width: 576px) {
+				       	padding-left: 0;
+				    }
+    			}
+    			.footer-phone{
+					margin: 24px 0 20px;
+					@media screen and (max-width: 576px) {
+				       	margin: 14px 0 10px;
+				    }
+				}
+				.menu-footer{
+					margin: 24px 0 20px;
+					a{
+						display: block;
+						color: #fff;
+						transition: .2s all;
+						margin-bottom: 5px;
+						&:hover{
+							color: $green;
+						}
+					}
+				}
+				.social-wrapper{
+					display: flex;
+					svg{
+						margin-right: 5px;
+					    width: 28px;
+					    cursor: pointer;
+					    fill: white;
+					    transition: .2s all;
+					    &:hover{
+					    	fill: $green
+					    }
+					}
+				}
+    		}
+    	}
+    }
 }
 

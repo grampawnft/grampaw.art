@@ -1,4 +1,13 @@
+// GSAP scrolltrigger
+var tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
 
+gsap.to(".template-container", {
+	scrollTrigger: ".template-container",
+	translateY: 0,
+	opacity: 1,
+	duration: 1
+});
 
 function pageTransition(){
 
@@ -62,6 +71,8 @@ barba.init({
 	    }
 	  }]
 })
+
+
 
 // form js
 $(document).on('focus click', '.login-input',  function(e){

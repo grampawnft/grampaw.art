@@ -10,7 +10,7 @@ header{
        width: 100vw;
     }
 	.container-header{
-		padding: 20px 0 20px 30px;
+		padding: 20px 10px 20px 30px;
 		display: flex;
 		justify-content: space-between;
 		max-width: 1280px;
@@ -34,15 +34,15 @@ header{
 		&.menu-top{
 			li{
 				position: relative;
-				margin-left: 10px;
-				margin-right: 10px;
+				margin-left: 5px;
+				margin-right: 5px;
 				a{
 					position: relative;
 					padding: 0.5rem 1.5rem;
     				color: #fff;
-    				font-family: oswald;
+    				font-family: raleway;
     				letter-spacing: 1px;
-    				font-size: 16px;
+    				font-size: 15px;
     				transition: .2s all;
     				&:after{
     					border-bottom: 1px solid;
@@ -83,8 +83,8 @@ header{
     				}
     				.number-cart{
 						position: absolute;
-					    top: -5px;
-					    left: 16px;
+					    top: -4px;
+					    left: 17px;
 					    width: 14px;
 					    height: 14px;
 					    border-radius: 50%;
@@ -101,6 +101,12 @@ header{
 					    &.active{
 					    	display: flex;
 					    }
+					}
+					&.js-show-cart{
+						svg{
+							width: 26px;
+							height: 26px;
+						}
 					}
 				}
 			}
@@ -135,12 +141,12 @@ header{
 	.mobile-cart{
 		position: relative;
 		svg{
-			width: 27px;
-			margin-top: -5px;
+			width: 29px;
+			margin-top: -1px;
 		}
 		.number-cart-mobile{
 			position: absolute;
-		    top: 6px;
+		    top: 7px;
 		    left: 31px;
 		    width: 14px;
 		    height: 14px;
@@ -207,7 +213,7 @@ header{
 				    text-transform: uppercase;
 				    font-weight: 700;
 				    text-align: center;
-				    line-height: 52px;
+				    line-height: 51px;
 				    svg{
 				    	height: auto;
 				    	width: 14px;
@@ -221,16 +227,16 @@ header{
 				    }
     			}
     			.title{
-    				font-weight: 400;
-				    line-height: 48px;
+    				font-weight: 600;
+				    line-height: 51px;
 				    height: 50px;
 				    color: $black;
 				    border-bottom: 1px solid #ecebeb;
 				    padding-bottom: 0;
 				    margin: 0;
 				    text-align: center;
-				    font-size: 20px;
-				    font-family: oswald;
+				    font-size: 18px;
+				    font-family: raleway;
 				    letter-spacing: 1px;
     			}
     			.minicart-counter{
@@ -288,7 +294,7 @@ header{
     								h3{
     									line-height: 16px;
     									font-size: 16px;
-    									font-family: oswald;
+    									font-family: raleway;
     									margin-bottom: 10px;
     									letter-spacing: 1px;
     									color: $green;
@@ -428,7 +434,8 @@ header{
 			    text-decoration: none;
 			    border-bottom: 1px solid $gray;
 			    cursor: pointer;
-			    font-family: oswald;
+			    font-family: raleway;
+			    font-weight: 600;
 			    letter-spacing: 1px;
 			    .toptab-icon{
 			    	display: inline-block;
@@ -463,11 +470,13 @@ header{
     	}
     }
     .tab-content{
-    	width: 100%;
-	    position: relative;
-	    height: calc(100vh - 80px);
-	    overflow: auto;
-	    overflow-x: hidden;
+    	.tab-content-wrapper{
+    		width: 100%;
+		    position: relative;
+		    height: calc(100vh - 80px);
+		    overflow: auto;
+		    overflow-x: hidden;
+    	}
 	    .tab-panel{
 	    	width: 100%;
 	    	padding-top: 10px;
@@ -475,10 +484,10 @@ header{
 	    	.menu-horizon-list{
 	    		border-bottom: 1px solid #ededed;
 	    		a{
-	    			font-size: 16px;
+	    			font-size: 15px;
 				    width: 100%;
 				    height: 54px;
-				    font-weight: 500;
+				    font-weight: 600;
 				    padding: 15px;
 				    color: $black;
 				    display: inline-block;
@@ -486,7 +495,7 @@ header{
 				    text-decoration: none;
 				    position: relative;
 				    text-align: right;
-				    font-family: oswald;
+				    font-family: raleway;
 			    	letter-spacing: 1px;
 			    	cursor: pointer;
 				    &:before{
@@ -531,7 +540,7 @@ header{
 	    				padding: 14px 20px 12px;
 	    				svg{
 	    					width: 20px;
-	    					margin-right: 10px;
+	    					margin-right: 15px;
 	    					margin-top: -4px;
 	    					vertical-align: middle;
 	    				}
@@ -601,10 +610,11 @@ header{
 		    height: 60px;
 		    line-height: 60px;
 		    text-align: center;
-		    font-family: oswald;
+		    font-family: raleway;
 		    text-transform: uppercase;
 		    letter-spacing: 1px;
 		    font-size: 15px;
+		    font-weight: 300;
 		    position: absolute;
 		    left: 0;
 		    bottom: 0;

@@ -11,12 +11,25 @@ $navy-blue: #365375;
 $red: #D32F2F;
 $green: #88c540;
 
+.white{
+	color: #fff;
+}
+
+.black{
+	color: $black;
+}
+
 @font-face {
   font-family: opensans;
-  src: url(opensans.ttf);
+  src: url(Helvetica.ttf);
 }
 
 @font-face {
   font-family: oswald;
-  src: url(oswald.ttf);
+  src: url(Raleway-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: raleway;
+  src: url(Raleway.ttf);
 }
