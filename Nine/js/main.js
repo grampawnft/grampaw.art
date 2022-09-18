@@ -90,12 +90,6 @@ function batch(targets, vars) {
   });
 }
 
-batch(".template-item", {
-  interval: 0.1, 
-  batchMax: 8,   
-  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6})
-});
-
 batch(".news-item", {
   interval: 0.1, 
   batchMax: 3,   
@@ -301,30 +295,3 @@ $(document).on('click', '.login-btn',  function(e){
 	_formlogin.fadeIn(200);
 
 });
-
-// var $animation_elements = $('.wow');
-// var $window = $(window);
-
-// function check_if_in_view() {
-//   var window_height = $window.height();
-//   var window_top_position = $window.scrollTop();
-//   var window_bottom_position = (window_top_position + window_height);
- 
-//   $.each($animation_elements, function() {
-//     var $element = $(this);
-//     var element_height = $element.outerHeight();
-//     var element_top_position = $element.offset().top;
-//     var element_bottom_position = (element_top_position + element_height);
- 
-//     //check to see if this current container is within viewport
-//     if ((element_bottom_position >= window_top_position) &&
-//         (element_top_position <= window_bottom_position)) {
-//       $element.addClass('in-view');
-//     } else {
-//       $element.removeClass('in-view');
-//     }
-//   });
-// }
-
-// $window.on('scroll resize', check_if_in_view);
-// $window.trigger('scroll');
