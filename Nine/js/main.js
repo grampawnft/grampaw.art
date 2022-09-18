@@ -93,25 +93,18 @@ function batch(targets, vars) {
 batch(".template-item", {
   interval: 0.1, 
   batchMax: 8,   
-  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
-  onLeave: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6}),
-  onEnterBack: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
-  onLeaveBack: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6})
+  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6})
 });
 
 batch(".news-item", {
   interval: 0.1, 
   batchMax: 3,   
-  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
-  onLeave: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6}),
-  onEnterBack: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6}),
-  onLeaveBack: batch => gsap.set(batch, {autoAlpha: 0, y: 50, overwrite: true, duration: .6})
+  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6})
 });
 
 gsap.to('.info-banner',{
 	scrollTrigger: {
-		trigger: '.info-banner',
-		scrub: 1
+		trigger: '.info-banner'
 	},
 	duration: .6,
 	y: 15,
@@ -122,7 +115,6 @@ gsap.to('.info-banner',{
 gsap.to('.image-banner',{
 	scrollTrigger: {
 		trigger: '.image-banner',
-		scrub: 1,
 		start: 'center 80%',
 	},
 	duration: 2,
