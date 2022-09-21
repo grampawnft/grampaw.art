@@ -7683,40 +7683,6 @@ var _slideshow = require("./slideshow");
     return navigation.updateCurrent(position);
   });
 });
-
-function hasClass(ele,cls) {
-     return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
-}
-
-window.addEventListener('load', 
-  function() { 
-	if ($("body").hasClass("body-home")) { 
-	    document.body.classList.remove('loading'); // initialize the slideshow and navigation
-
-	  	var slideshow = new _slideshow.Slideshow(document.querySelector('.slideshow'));
-	  	var navigation = new _navigation.Navigation(document.querySelector('.slides-nav')); // navigation events
-
-	  	navigation.DOM.ctrls.next.addEventListener('click', function () {
-	    	return slideshow.next();
-	  	});
-	  	navigation.DOM.ctrls.prev.addEventListener('click', function () {
-	    	return slideshow.prev();
-	  	}); // set the initial navigation current slide value
-
-	  	navigation.updateCurrent(slideshow.current); // set the navigation total number of slides
-
-	  	navigation.DOM.total.innerHTML = slideshow.current < 10 ? "0".concat(slideshow.slidesTotal) : slideshow.slidesTotal;
-	  	setInterval(function () {
-	    	slideshow.next();
-	  	}, 6000); // when a new slide is shown, update the navigation current slide value
-
-	  	slideshow.on('updateCurrent', function (position) {
-	    	return navigation.updateCurrent(position);
-	  	});
-	}
-}, false);
-
-
 },{"../utils":"js/utils.js","../navigation":"js/navigation.js","./slideshow":"js/demo1/slideshow.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
