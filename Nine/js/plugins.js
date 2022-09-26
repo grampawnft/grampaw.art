@@ -7675,9 +7675,9 @@ var _slideshow = require("./slideshow");
   navigation.updateCurrent(slideshow.current); // set the navigation total number of slides
 
   navigation.DOM.total.innerHTML = slideshow.current < 10 ? "0".concat(slideshow.slidesTotal) : slideshow.slidesTotal;
-  setInterval(function () {
-    slideshow.next();
-  }, 6000); // when a new slide is shown, update the navigation current slide value
+  // setInterval(function () {
+  //   slideshow.next();
+  // }, 6000); // when a new slide is shown, update the navigation current slide value
 
   slideshow.on('updateCurrent', function (position) {
     return navigation.updateCurrent(position);
