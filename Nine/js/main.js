@@ -30,16 +30,21 @@ barba.init({
 
 	sync: true,
 	transitions: [{
-		leave(data) {
-            return gsap.to(data.current.container, {
-              opacity: 0
-            });
-          },
-          enter(data) {
-            return gsap.from(data.next.container, {
-              opacity: 0
-            });
-          }
+		async leave(data){
+
+			const done = this.async();
+			pageTransition();
+			await delay(1500);
+			done();
+
+		},
+
+		async enter(data){
+			contentAnimation();
+		},
+		async once(data){
+			contentAnimation()
+		}
 	}],
 	views: [{
 	    namespace: 'home',
