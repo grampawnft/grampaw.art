@@ -7738,11 +7738,13 @@ barba.init({
 	views: [{
 	    namespace: 'home',
 	    afterEnter(data) {
-	    	slideshow.init();
+	    	
 	    	var tl = gsap.timeline();
 
 	    	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
 			tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2');
+
+			slideshow.init();
 
 	    }
 	  }]
