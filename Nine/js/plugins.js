@@ -7657,32 +7657,162 @@ var _navigation = require("../navigation");
 
 var _slideshow = require("./slideshow");
 
-// Preload all images
-(0, _utils.preloadImages)('.slide__img').then(function () {
-  // remove loader (loading class) 
-  document.body.classList.remove('loading'); // initialize the slideshow and navigation
+function pageTransition(){
 
-  var slideshow = new _slideshow.Slideshow(document.querySelector('.slideshow'));
-  var navigation = new _navigation.Navigation(document.querySelector('.slides-nav')); // navigation events
+	var tl = gsap.timeline();
 
-  navigation.DOM.ctrls.next.addEventListener('click', function () {
-    return slideshow.next();
-  });
-  navigation.DOM.ctrls.prev.addEventListener('click', function () {
-    return slideshow.prev();
-  }); // set the initial navigation current slide value
+	tl.to('.main-container', { duration: .5, opacity: 1})
+	tl.to('ul.transition li', { duration: .5, scaleY: 1, transformOrigin: "bottom left", stagger: .2})
+	tl.to('ul.transition li', { duration: .5, scaleY: 0, transformOrigin: "bottom left", stagger: .1, delay: .1})
+	tl.to('.main-container', { duration: .5, opacity: 0, delay: .1})
+}
 
-  navigation.updateCurrent(slideshow.current); // set the navigation total number of slides
+function contentAnimation(){
 
-  navigation.DOM.total.innerHTML = slideshow.current < 10 ? "0".concat(slideshow.slidesTotal) : slideshow.slidesTotal;
-  setInterval(function () {
-    slideshow.next();
-  }, 6000); // when a new slide is shown, update the navigation current slide value
+	var tl = gsap.timeline();
 
-  slideshow.on('updateCurrent', function (position) {
-    return navigation.updateCurrent(position);
-  });
-});
+	tl.from('header', { duration: 1.5, opacity: 0})
+
+}
+
+function delay(n){
+	n = n || 2000;
+	return new Promise(done => {
+		setTimeout(() => {
+			done();
+		}, n);
+	});
+}
+
+gsap.registerPlugin(ScrollTrigger);
+
+barba.init({
+
+	sync: true,
+	transitions: [{
+		async leave(data){
+
+			const done = this.async();
+			pageTransition();
+			await delay(1500);
+			done();
+
+		},
+
+		async enter(data){
+			contentAnimation();
+		},
+		async once(data){
+			contentAnimation()
+		}
+	}],
+	views: [{
+	    namespace: 'home',
+	    afterEnter(data) {
+
+	    	// Preload all images
+			(0, _utils.preloadImages)('.slide__img').then(function () {
+			  // remove loader (loading class) 
+			  document.body.classList.remove('loading'); // initialize the slideshow and navigation
+
+			  var slideshow = new _slideshow.Slideshow(document.querySelector('.slideshow'));
+			  var navigation = new _navigation.Navigation(document.querySelector('.slides-nav')); // navigation events
+
+			  navigation.DOM.ctrls.next.addEventListener('click', function () {
+			    return slideshow.next();
+			  });
+			  navigation.DOM.ctrls.prev.addEventListener('click', function () {
+			    return slideshow.prev();
+			  }); // set the initial navigation current slide value
+
+			  navigation.updateCurrent(slideshow.current); // set the navigation total number of slides
+
+			  navigation.DOM.total.innerHTML = slideshow.current < 10 ? "0".concat(slideshow.slidesTotal) : slideshow.slidesTotal;
+			  setInterval(function () {
+			    slideshow.next();
+			  }, 6000); // when a new slide is shown, update the navigation current slide value
+
+			  slideshow.on('updateCurrent', function (position) {
+			    return navigation.updateCurrent(position);
+			  });
+			});
+
+	    	var tl = gsap.timeline();
+
+	    	tl.to('.slide__caption', { duration: 1.5, translateY: 0, opacity: 1}, '-=1')
+			tl.to('.slide__img-wrap', { duration: 1, clipPath: 'circle(55% at 70% 50%)', opacity: 1}, '-=1.2');
+
+			function batch(targets, vars) {
+			  let varsCopy = {},
+			      interval = vars.interval || 0.1,
+			      proxyCallback = (type, callback) => {
+			        let batch = [],
+			            delay = gsap.delayedCall(interval, () => {callback(batch); batch.length = 0;}).pause();
+			        return self => {
+			          batch.length || delay.restart(true);
+			          batch.push(self.trigger);
+			          vars.batchMax && vars.batchMax <= batch.length && delay.progress(1);
+			        };
+			      },
+			      p;
+			  for (p in vars) {
+			    varsCopy[p] = (~p.indexOf("Enter") || ~p.indexOf("Leave")) ? proxyCallback(p, vars[p]) : vars[p];
+			  }
+			  gsap.utils.toArray(targets).forEach(target => {
+			    let config = {};
+			    for (p in varsCopy) {
+			      config[p] = varsCopy[p];
+			    }
+			    config.trigger = target;
+			    ScrollTrigger.create(config);
+			  });
+			}
+
+			batch(".news-item", {
+			  interval: 0.1, 
+			  batchMax: 3,   
+			  onEnter: batch => gsap.to(batch, {autoAlpha: 1, y: 0, stagger: 0.3, overwrite: true, duration: .6})
+			});
+
+			gsap.to('.info-banner',{
+				scrollTrigger: {
+					trigger: '.info-banner'
+				},
+				duration: .6,
+				y: 15,
+				autoAlpha: 1,
+				ease: "back.out(3)"
+			});
+
+			gsap.to('.image-banner',{
+				scrollTrigger: {
+					trigger: '.image-banner',
+					start: 'center 80%',
+				},
+				duration: 2,
+				scale: 1,
+				opacity: 1,
+				ease: "back.out(2)"
+			}, );
+
+			gsap.to('.footer',{
+				scrollTrigger: {
+					trigger: '.footer',
+				},
+				duration: 1.5,
+				opacity: 1,
+				ease: "power4.out)"
+			}, );
+
+	    }
+	  }]
+})
+
+
+
+
+
+
 },{"../utils":"js/utils.js","../navigation":"js/navigation.js","./slideshow":"js/demo1/slideshow.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
