@@ -48,6 +48,18 @@ barba.init({
 	}],
 	views: [{
 	    namespace: 'home',
+	    beforeEnter({ next }) {
+	      // Script URLs to load
+	      let pageScriptSrcs = [
+	        'https://grampaw.art/Nine/js/plugins.js'
+	      ]
+	      
+	      pageScriptSrcs.forEach(scriptSrc => {
+	        let script = '<script src="' + scriptSrc + '"><\/script>';
+	        console.log(script);
+	        next.container.appendChild(script);
+	      })
+	    },
 	    afterEnter(data) {
 	    	// if(!window.location.hash) {
 		    //     window.location = window.location + '#loaded';
