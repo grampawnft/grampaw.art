@@ -3,8 +3,8 @@ function pageTransition(){
 	var tl = gsap.timeline();
 
 	tl.to('.main-container', { duration: .5, opacity: 1})
-	tl.to('ul.transition li', { duration: .5, scaleY: 1, transformOrigin: "bottom left", stagger: .2})
-	tl.to('ul.transition li', { duration: .5, scaleY: 0, transformOrigin: "bottom left", stagger: .1, delay: .1})
+	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2})
+	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1})
 	tl.to('.main-container', { duration: .5, opacity: 0, delay: .1})
 }
 
@@ -164,8 +164,8 @@ $(document).ready(function(){
   				pauseOnHover:false
 			});
 			 polylineToPath();
+			 $('.svg-anim, .svg-anim2').css('opacity','1');
 	    }, 3500); 
-	   
     }
 	
 });
