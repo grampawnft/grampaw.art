@@ -1,0 +1,309 @@
+.hero-slider{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	.hero-slider-wrapper{
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		.hero-slider-item{
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+			.hero-slider-caption{
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				padding-left: 130px;
+				position: relative;
+				@media screen and (min-width: 1600px) {
+			       padding-left: 190px;
+			    }
+			    @media screen and (max-width: 1200px) {
+			       padding-left: 120px;
+			    }
+			    @media screen and (max-width: 650px) {
+			       padding-left: 60px;
+			    }
+				&:before{
+					position: absolute;
+					content: '';
+					width: 100px;
+					height: 100%;
+					left: 0;
+					top: 0;
+					background-color: $yellow;
+					transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+					transform: scaleY(0);
+					transform-origin: center top;
+					@media screen and (min-width: 1600px) {
+				       width: 160px;
+				    }
+				    @media screen and (max-width: 1200px) {
+				       width: 90px;
+				    }
+				    @media screen and (max-width: 650px) {
+				       width: 40px;
+				    }
+				}
+				h1{
+					font-size: 66px;
+					color: #fff;
+					line-height: 1;
+					font-weight: 500;
+					vertical-align: text-top;
+    				display: inline-block;
+    				overflow: hidden;
+    				position: relative;
+    				margin-top: -8px;
+    				padding-bottom: 14px;
+    				@media screen and (min-width: 1600px) {
+				       font-size: 86px;
+				    }
+				    @media screen and (max-width: 1200px) {
+				       font-size: 60px;
+				    }
+				    @media screen and (max-width: 650px) {
+				       font-size: 28px;
+				       margin-top: 0;
+				    }
+    				span{
+    					display: inline-block;
+						transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+						opacity: 0;
+						transform: translateY(40px);
+						transition-delay: .1s;
+						font-family: 'Patua One', cursive;
+					}
+					&.yellow{
+						color: $yellow;
+					}
+					&:nth-child(2){
+						margin-bottom: 10px;
+						margin-top: -10px;
+						@media screen and (max-width: 650px) {
+					       margin-bottom: 0;
+					    }
+						span{
+							transition-delay: .4s;
+						}
+					}
+				}
+				.inner-caption{
+					display: flex;
+					align-items: center;
+					transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+					opacity: 0;
+					transform: translateY(40px);
+					transition-delay: .7s;
+					p{
+						font-size: 15px;
+						line-height: 21px;
+						color: #fff;
+						max-width: 430px;
+						margin: 0;
+						letter-spacing: .3px;
+						@media screen and (min-width: 1600px) {
+					       	font-size: 19px;
+							line-height: 25px;
+							max-width: 530px;
+					    }
+					    @media screen and (max-width: 1200px) {
+					       	font-size: 14px;
+							line-height: 20px;
+							max-width: 400px;
+					    }
+					    @media screen and (max-width: 650px) {
+					       	font-size: 12px;
+							line-height: 18px;
+							max-width: 240px;
+					    }
+					}
+					.button-square{
+						margin-top: -9px;
+					}
+				}
+				
+			}
+			&.active{
+				.hero-slider-caption{
+					&:before{
+						transform: scaleY(1);
+					}
+					h1{
+						span{
+							opacity: 1;
+							transform: translateY(0)
+						}
+					}
+					.inner-caption{
+						opacity: 1;
+						transform: translateY(0)
+					}
+				}
+			}
+		}
+		.slick-dots{
+			bottom: 10px;
+			left: 20px;
+			text-align: left;
+			@media screen and (max-width: 650px) {
+		       	bottom: 50px;
+		    }
+			li{
+				background-color: transparent;
+			    padding-top: 4px;
+			    padding-bottom: 4px;
+			    border-radius: 0;
+			    height: 5px;
+			    margin-right: 2px;
+			    width: 35px;
+			    opacity: 1;
+			    @media screen and (min-width: 1600px) {
+			       	width: 40px;
+			    	height: 40px;
+			    }
+			    @media screen and (max-width: 1200px) {
+			       	width: 33px;
+			    	height: 33px;
+			    }
+			    @media screen and (max-width: 650px) {
+			       	width: 25px;
+			    	height: 25px;
+			    }
+			    &:before{
+			    	content: "";
+				    position: absolute;
+				    height: 3px;
+				    width: 100%;
+				    left: 0;
+				    background-color: #fff;
+				    transform: scaleY(1);
+				    transition: all .5s ease;
+			    }
+			    &.slick-active {
+			        &:before{
+					    transform: scaleY(1.5);
+					    background-color: $yellow;
+				    }
+			    }
+			}
+			.hero-slider-dots {
+	            display: none;
+	        }
+		}
+	}
+	.st0{
+		transition-delay: 1s;
+	}
+	.svg-anim{
+		animation: loading 20s linear infinite;
+		position: absolute;
+		right: -25vw;
+		top: 30%;
+		z-index: 2;
+		height: 90vh;
+		pointer-events: none;
+		@media screen and (min-width: 1600px) {
+	       	right: -40vw;
+	    }
+		path {
+		    fill: none;
+		    stroke: #FFFF00;
+		    stroke-width: 1;
+		}
+	}
+	.svg-anim2{
+		animation: loadings 35s linear infinite;
+		position: absolute;
+		top: -90vh;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		height: 80vh;
+		pointer-events: none;
+		path {
+		    fill: none;
+		    stroke: #FFFF00;
+		    stroke-width: 1;
+		}
+	}
+
+	.svg-scrolldown{
+		position: absolute;
+		bottom: 20px;
+		right: 25px;
+		width: 15px;
+		z-index: 3;
+		opacity: .8;
+		@media screen and (min-width: 1600px) {
+	       	bottom: 30px;
+			right: 35px;
+			width: 20px;
+	    }
+	    @media screen and (max-width: 650px) {
+	       	bottom: 60px;
+	    }
+		path, rect, polygon{
+			fill: #fff;
+		}
+		rect{
+			animation: loadingrect 1.8s linear infinite;
+		}
+	}
+
+	@keyframes loading {
+		  from {
+		    transform: rotate(0deg) skew(0deg, 0deg) scale(1);
+		  }
+		  50% {
+		  	transform: rotate(179deg) skew(20deg, 20deg) scale(.75);
+		  }
+		  to {
+		    transform: rotate(359deg) skew(0deg, 0deg) scale(1);
+		  }
+	 }
+	 @keyframes loadings {
+		  from {
+		    transform: rotate(0deg);
+		  }
+		  50% {
+		  	transform: rotate(-179deg) skew(-20deg, -20deg) scale(1.2);
+		  }
+		  to {
+		    transform: rotate(-359deg);
+		  }
+	 }
+
+	 @keyframes loadingrect {
+		  from {
+		    transform: translateY(0);
+		    
+		  }
+		  to {
+		    transform: translateY(30px);
+		    
+		  }
+	 }
+}
+
+.product-slider{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: $black;
+}

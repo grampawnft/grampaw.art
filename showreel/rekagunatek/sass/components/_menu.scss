@@ -1,0 +1,95 @@
+header{
+	position: fixed;
+	width: 100vw;
+	height: 80px;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	opacity: 0;
+	@media screen and (min-width: 1600px) {
+       height: 110px;
+       padding: 0 30px;
+    }
+    @media screen and (max-width: 650px) {
+       height: 70px;
+    }
+	.main-logo{
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media screen and (min-width: 1600px) {
+	       	width: 85px;
+			height: 85px;
+	    }
+	    @media screen and (max-width: 650px) {
+	       	width: 50px;
+			height: 50px;
+	    }
+		img{
+			max-width: 100%;
+			object-position: center;
+			object-fit: contain;
+		}
+	}
+	.hamburger-menu {
+	  	display: flex;
+	  	flex-flow: column;
+	  	justify-content: center;
+	  	height: 30px;
+	  	width: 30px;
+	  	cursor: pointer;
+	  	margin-right: 20px;
+	  	@media screen and (min-width: 1600px) {
+	       	width: 50px;
+			height: 50px;
+	    }
+	    @media screen and (max-width: 650px) {
+	       	width: 25px;
+			height: 25px;
+	    }
+	  	.bar-top,
+		.bar-middle,
+		.bar-bottom {
+		  	height: 5px;
+		  	background: white;
+		  	border-radius: 5px;
+		  	margin: 3px 0;
+		  	transform-origin: left;
+		  	transition: all 0.5s;
+		  	@media screen and (min-width: 1600px) {
+		       	margin: 5px 0;
+		    }
+		}
+		&.active{
+			.bar-top{
+				transform: rotate(42deg);
+				@media screen and (min-width: 1600px) {
+			       	transform: rotate(38deg);
+			    }
+			    @media screen and (max-width: 650px) {
+			       	transform: rotate(40deg);
+			    }
+			}
+			.bar-middle{
+				transform:translateX(5px);
+  				opacity: 0;
+			}
+			.bar-bottom{
+				transform: rotate(-42deg);
+				@media screen and (min-width: 1600px) {
+			       	transform: rotate(-38deg);
+			    }
+			    @media screen and (max-width: 650px) {
+			       	transform: rotate(-40deg);
+			    }
+			}
+		}
+	}
+
+}
