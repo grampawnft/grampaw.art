@@ -4366,7 +4366,7 @@ function pageTransition(){
 
 	var tl = gsap.timeline();
 
-	tl.to('.main-container', { duration: .5, opacity: 0});
+	tl.to('.main-container', { duration: .1, opacity: 0});
 	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
 
 	setTimeout(function() { 
@@ -4381,7 +4381,7 @@ function contentAnimation(){
 	setTimeout(function() { 
 		$('body').removeClass('loading');
 	}, 2500);
-	tl.to('.main-container', { duration: .5, opacity: 1, delay: 1.5});
+	tl.to('.main-container', { duration: .1, opacity: 1});
 	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: 2.5});
 	
 }
