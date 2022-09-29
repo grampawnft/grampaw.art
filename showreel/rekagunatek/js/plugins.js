@@ -4381,7 +4381,7 @@ function contentAnimation(){
 	setTimeout(function() { 
 		$('body').removeClass('loading');
 	}, 2500);
-	tl.to('.main-container', { duration: .1, opacity: 1});
+	tl.to('.main-container', { duration: .1, opacity: 1, delay: .1});
 	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: 2.5});
 	
 }
