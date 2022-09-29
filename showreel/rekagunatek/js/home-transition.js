@@ -82,7 +82,25 @@ $(document).ready(function(){
     		setTimeout(function() {
     			$('body').removeClass('loading');
 			}, 2500);
-		  	
+		  	setTimeout(function() {
+			    $('.hero-slider-wrapper').on('init', function(event, slick){
+				    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
+				});
+				$('.hero-slider-wrapper').slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					speed: 100,
+					arrows: false,
+					fade: true,
+					dots: true,
+					infinite: true,
+					autoplay: true,
+					autoplaySpeed: 8000,
+					focusOnSelect: false,
+	  				pauseOnHover:false
+				});
+				$('.svg-anim, .svg-anim2').css('opacity','1');
+			 }, 3000);
 		})
 	     
     }
