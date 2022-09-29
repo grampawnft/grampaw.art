@@ -4365,9 +4365,9 @@ function animatePath(){
 function pageTransition(){
 
 	var tl = gsap.timeline();
-
+	
 	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
-	// tl.to('.main-container', { duration: .5, opacity: 0});
+	tl.to('.main-container', { duration: .5, opacity: 0});
 
 	setTimeout(function() { 
 		$('body').addClass('loading');
@@ -4380,6 +4380,7 @@ function contentAnimation(){
 	var tl = gsap.timeline();
 	setTimeout(function() { 
 		$('body').removeClass('loading');
+		tl.to('.main-container', { duration: .5, opacity: 1});
 	}, 2500);
 	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: 2.5});
 	
