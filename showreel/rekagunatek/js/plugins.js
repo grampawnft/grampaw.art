@@ -4499,7 +4499,7 @@ barba.init({
 
 			polylineToPath();
 			$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-			    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
+			    $(".hero-slider-wrapper").find('.hero-slider-item').eq(currentSlide).removeClass("active");
 
 		    	var _video = $(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).find('video');
 		    	if(_video.length > 0){
