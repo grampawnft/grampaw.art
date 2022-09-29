@@ -75,6 +75,7 @@ $(document).ready(function(){
 			})
 	    }
 
+	    $('body').addClass('loading');
     	tl.from('ul.transition li', { duration: .5, scaleY: 1, stagger: .2, delay: 3});
     	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .2});
     	setTimeout(function() { 
