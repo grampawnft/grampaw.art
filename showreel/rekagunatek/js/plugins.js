@@ -4516,10 +4516,6 @@ barba.init({
 
 	    		contentAnimation();
 
-	    		function once(){
-	    			$(".hero-slider-wrapper").find('.slick-current').addClass("active");
-	    		}
-
 			    setTimeout(function() {
 					$('.hero-slider-wrapper').slick({
 						slidesToShow: 1,
@@ -4534,7 +4530,7 @@ barba.init({
 						focusOnSelect: false,
 		  				pauseOnHover:false
 					});
-					once();
+					$(".hero-slider-wrapper").find('.slick-current').addClass("active");
 					$('.svg-anim, .svg-anim2').css('opacity','1');
 				 }, 3000);
 	    	});
