@@ -4501,17 +4501,16 @@ barba.init({
 			polylineToPath();
 			$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
 			    $(".hero-slider-wrapper").find('.hero-slider-item').eq(currentSlide).removeClass("active");
-
-		    	var _video = $(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).find('video');
+			});
+			$('.hero-slider-wrapper').on('afterChange', function(event, slick, currentSlide, nextSlide){
+				$(".hero-slider-wrapper").find('.hero-slider-item').eq(currentSlide).addClass("active");
+				var _video = $(".hero-slider-wrapper").find('.hero-slider-item').eq(currentSlide).find('video');
 		    	if(_video.length > 0){
 		    		$('.svg-anim, .svg-anim2').hide();
 		    	}
 		    	else{
 		    		$('.svg-anim, .svg-anim2').show();
 		    	}
-			});
-			$('.hero-slider-wrapper').on('afterChange', function(event, slick, currentSlide, nextSlide){
-				$(".hero-slider-wrapper").find('.hero-slider-item').eq(currentSlide).addClass("active");
 			});
 	    },
 	    afterEnter(data) {
