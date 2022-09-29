@@ -4377,6 +4377,7 @@ function pageTransition(){
 
 function contentAnimation(){
 
+	var tl = gsap.timeline();
 	setTimeout(function() { 
 		$('body').removeClass('loading');
 		tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
