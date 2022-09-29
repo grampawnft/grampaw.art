@@ -4373,30 +4373,28 @@ function pageTransition(){
 		preloadImages('.img-slider-home').then(function () {
 			$('body').removeClass('loading');
 			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
-			setTimeout(function() {
-		    	$('.hero-slider-wrapper').on('init', function(event, slick){
-				    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
-				});
-				$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-				    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
-			    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
-				});
-				$('.hero-slider-wrapper').slick({
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					speed: 100,
-					arrows: false,
-					fade: true,
-					dots: true,
-					infinite: true,
-					autoplay: true,
-					autoplaySpeed: 8000,
-					focusOnSelect: false,
-	  				pauseOnHover:false
-				});
-				 polylineToPath();
-				 $('.svg-anim, .svg-anim2').css('opacity','1');
-		    }, 1000);
+			$('.hero-slider-wrapper').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 100,
+				arrows: false,
+				fade: true,
+				dots: true,
+				infinite: true,
+				autoplay: true,
+				autoplaySpeed: 8000,
+				focusOnSelect: false,
+  				pauseOnHover:false
+			});
+			$('.hero-slider-wrapper').on('init', function(event, slick){
+			    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
+			});
+			$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+			    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
+		    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
+			});
+			 polylineToPath();
+			 $('.svg-anim, .svg-anim2').css('opacity','1');
 		});
 	}
 
@@ -4451,7 +4449,7 @@ barba.init({
 	    	$(script).remove();
 	    },
 	    afterEnter(data) {
-	    	preloadImages('.slide__img img').then(function () {
+	    	preloadImages('.slide__img').then(function () {
 	    		var offset;
 			    function polylineToPath() {
 
