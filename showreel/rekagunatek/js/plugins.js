@@ -4377,21 +4377,11 @@ function pageTransition(){
 
 function contentAnimation(){
 
-	var tl = gsap.timeline();
-
-	tl.from('.main-container', { duration: .5, opacity: 0});
-	tl.to('.main-container', { duration: .5, opacity: 1});
+	$('body').removeClass('loading');
+	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
 	
 }
 
-function delay(n){
-	n = n || 2000;
-	return new Promise(done => {
-		setTimeout(() => {
-			done();
-		}, n);
-	});
-}
 
 barba.init({
 
@@ -4406,8 +4396,7 @@ barba.init({
 	    afterEnter(data) {
 	    	preloadImages('.img-slider-home').then(function () {
 
-	    		$('body').removeClass('loading');
-    			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
+	    		contentAnimation();
 
 	    		var offset;
 			    function polylineToPath() {
@@ -4534,6 +4523,12 @@ barba.init({
 				});
 			});
 	    }
+	  },
+	  {
+	  	namespace: 'product',
+	  	afterEnter(data) {
+	  		contentAnimation();
+	  	}
 	  }]
 })
 
