@@ -4367,12 +4367,9 @@ function pageTransition(){
 	var tl = gsap.timeline();
 
 	if ($('body').hasClass('body-home')){
-		tl.to('.main-container', { duration: .5, opacity: 1})
 		tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
-		tl.to('.main-container', { duration: .5, opacity: 0, delay: .1});
-		setTimeout(function() {
-			$('body').addClass('loading');
-		}, 100);
+		tl.to('.main-container', { duration: .5, opacity: 0});
+		$('body').addClass('loading');
 		preloadImages('.img-slider-home').then(function () {
 			$('body').removeClass('loading');
 			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
@@ -4413,8 +4410,8 @@ function contentAnimation(){
 
 	var tl = gsap.timeline();
 
-	tl.from('header', { duration: .5, opacity: 0});
-	tl.to('header', { duration: .5, opacity: 1});
+	tl.from('.main-container', { duration: .5, opacity: 0});
+	tl.to('.main-container', { duration: .5, opacity: 1});
 	
 }
 
