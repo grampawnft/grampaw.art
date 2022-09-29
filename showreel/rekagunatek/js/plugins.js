@@ -4491,6 +4491,7 @@ barba.init({
 	    beforeLeave(data) {
 	      var script = document.getElementById('hometransition');
 	      $( script ).remove();
+	      $('.hero-slider-wrapper').slick('unslick');
 	    },
 	    beforeEnter(data) {
 
