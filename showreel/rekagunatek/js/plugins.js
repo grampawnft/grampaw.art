@@ -4371,7 +4371,7 @@ function pageTransition(){
 		$('body').addClass('loading');
 		preloadImages('.img-slider-home').then(function () {
 			$('body').removeClass('loading');
-			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
+			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .2});
 			setTimeout(function() {
 		    	$('.hero-slider-wrapper').on('init', function(event, slick){
 				    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
@@ -4401,7 +4401,7 @@ function pageTransition(){
 
 	else{
 		tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
-		tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
+		tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .2});
 	}
 }
 
@@ -4445,10 +4445,6 @@ barba.init({
 	}],
 	views: [{
 	    namespace: 'home',
-	    beforeEnter(data){
-	    	var script = document.getElementById("hometransition");
-	    	$(script).remove();
-	    },
 	    afterEnter(data) {
 	    	preloadImages('.slide__img img').then(function () {
 				// remove loader (loading class) 
