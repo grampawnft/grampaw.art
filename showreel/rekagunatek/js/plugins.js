@@ -4501,13 +4501,6 @@ barba.init({
 			    }
 
 			    setTimeout(function() {
-			    	$('.hero-slider-wrapper').on('init', function(event, slick){
-					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
-					});
-					$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-					    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
-				    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
-					});
 					$('.hero-slider-wrapper').slick({
 						slidesToShow: 1,
 						slidesToScroll: 1,
