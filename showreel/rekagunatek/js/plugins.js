@@ -4493,6 +4493,10 @@ barba.init({
 	      $( script ).remove();
 	    },
 	    beforeEnter(data) {
+
+	    	var vid = document.getElementById("myVideo");
+			vid.play();
+			
 			polylineToPath();
 			$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
 			    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
@@ -4501,7 +4505,6 @@ barba.init({
 		    	var _video = $(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).find('video');
 		    	if(_video.length > 0){
 		    		$('.svg-anim, .svg-anim2').hide();
-		    		_video.play()
 		    	}
 		    	else{
 		    		$('.svg-anim, .svg-anim2').show();
