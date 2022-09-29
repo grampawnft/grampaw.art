@@ -4371,7 +4371,7 @@ function pageTransition(){
 
 	setTimeout(function() { 
 		$('body').addClass('loading');
-	}, 500);
+	}, 700);
 
 	setTimeout(function() { 
     	$('body').removeClass('loading');
@@ -4521,7 +4521,7 @@ barba.init({
 					});
 					 polylineToPath();
 					 $('.svg-anim, .svg-anim2').css('opacity','1');
-			    }, 500); 
+			    }, 1700); 
 
 				// remove loader (loading class) 
 				// document.body.classList.remove('loading');
