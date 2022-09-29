@@ -4529,6 +4529,11 @@ barba.init({
 	  },
 	  {
 	  	namespace: 'product',
+	  	beforeLeave(data) {
+	      var script = document.getElementById('hometransition');
+	      $( script ).remove();
+	      pageTransition();
+	    },
 	  	afterEnter(data) {
 	  		contentAnimation();
 	  	}
