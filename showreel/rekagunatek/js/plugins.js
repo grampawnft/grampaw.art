@@ -4493,9 +4493,6 @@ barba.init({
 	      $( script ).remove();
 	    },
 	    beforeEnter(data) {
-	    	let script = document.createElement('script');
-      		script.src = 'https://grampaw.art/showreel/rekagunatek/js/home-transition.js';
-      		next.container.appendChild(script);
 
 	    	var vid = document.getElementById("myVideo");
 			vid.play();
@@ -4520,7 +4517,26 @@ barba.init({
 	    	preloadImages('.img-slider-home').then(function () {
 
 	    		contentAnimation();
-			    
+
+			    setTimeout(function() {
+				    $('.hero-slider-wrapper').on('init', function(event, slick){
+					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
+					});
+					$('.hero-slider-wrapper').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						speed: 100,
+						arrows: false,
+						fade: true,
+						dots: true,
+						infinite: true,
+						autoplay: true,
+						autoplaySpeed: 8000,
+						focusOnSelect: false,
+		  				pauseOnHover:false
+					});
+					$('.svg-anim, .svg-anim2').css('opacity','1');
+				 }, 3000);
 	    	});
 
 	    	preloadImages('.slide__img').then(function () {
@@ -4555,6 +4571,10 @@ barba.init({
 	  },
 	  {
 	  	namespace: 'product',
+	  	beforeLeave(data) {
+	      var script = document.getElementById('hometransition');
+	      $( script ).remove();
+	    },
 	  	afterEnter(data) {
 	  		contentAnimation();
 	  	}
