@@ -4296,10 +4296,10 @@ function pageTransition(){
 	var tl = gsap.timeline();
 
 	if ($('body').hasClass('body-home')){
+		tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
 		$('body').addClass('loading');
 		setTimeout(function() { 
 	        $('body').removeClass('loading');
-	        tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
 			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
 	    }, 3000);
 	    setTimeout(function() {
