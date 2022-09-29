@@ -4380,8 +4380,8 @@ function contentAnimation(){
 	var tl = gsap.timeline();
 	setTimeout(function() { 
 		$('body').removeClass('loading');
-	}, 1000);
-	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: 1});
+	}, 2500);
+	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: 2.5});
 	
 }
 
