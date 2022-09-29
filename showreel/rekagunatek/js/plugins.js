@@ -4368,12 +4368,15 @@ function pageTransition(){
 
 	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
 	tl.to('.main-container', { duration: .5, opacity: 0});
-	$('body').addClass('loading');
+
+	setTimeout(function() { 
+		$('body').addClass('loading');
+	}, 500);
 
 	setTimeout(function() { 
     	$('body').removeClass('loading');
     	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
-    }, 2000);
+    }, 2500);
 
 }
 
