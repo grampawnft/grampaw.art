@@ -4374,6 +4374,10 @@ barba.init({
 	}],
 	views: [{
 	    namespace: 'home',
+	    beforeEnter(data){
+	    	var script = document.getElementById("hometransition");
+	    	$(script).remove();
+	    },
 	    afterEnter(data) {
 	    	preloadImages('.slide__img img').then(function () {
 				// remove loader (loading class) 
