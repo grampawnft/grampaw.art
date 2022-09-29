@@ -4417,6 +4417,10 @@ barba.init({
 	}],
 	views: [{
 	    namespace: 'home',
+	    beforeLeave(data) {
+	      var script = document.getElementById('hometransition');
+	      $( script ).remove();
+	    },
 	    afterEnter(data) {
 	    	preloadImages('.slide__img').then(function () {
 	    		var offset;
@@ -4491,32 +4495,30 @@ barba.init({
 					})
 			    }
 
-			    $('.hero-slider-wrapper').slick('destroy');
-			    
-				$('.hero-slider-wrapper').slick({
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					speed: 100,
-					arrows: false,
-					fade: true,
-					dots: true,
-					infinite: true,
-					autoplay: true,
-					autoplaySpeed: 8000,
-					focusOnSelect: false,
-	  				pauseOnHover:false
-				});
-
-				$('.hero-slider-wrapper').on('init', function(event, slick){
-				    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
-				});
-				$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-				    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
-			    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
-				});
-
-				 polylineToPath();
-				 $('.svg-anim, .svg-anim2').css('opacity','1'); 
+			    setTimeout(function() {
+			    	$('.hero-slider-wrapper').on('init', function(event, slick){
+					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
+					});
+					$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+					    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
+				    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
+					});
+					$('.hero-slider-wrapper').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						speed: 100,
+						arrows: false,
+						fade: true,
+						dots: true,
+						infinite: true,
+						autoplay: true,
+						autoplaySpeed: 8000,
+						focusOnSelect: false,
+		  				pauseOnHover:false
+					});
+					 polylineToPath();
+					 $('.svg-anim, .svg-anim2').css('opacity','1');
+			    }, 500); 
 
 				// remove loader (loading class) 
 				// document.body.classList.remove('loading');
