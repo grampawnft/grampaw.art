@@ -4377,8 +4377,10 @@ function pageTransition(){
 
 function contentAnimation(){
 
-	$('body').removeClass('loading');
-	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
+	setTimeout(function() { 
+		$('body').removeClass('loading');
+		tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
+	}, 1000);
 	
 }
 
