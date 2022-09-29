@@ -4390,12 +4390,26 @@ function contentAnimation(){
 barba.init({
 
 	sync: true,
+	transitions: [{
+		async leave(data){
+
+			const done = this.async();
+			pageTransition();
+			await delay(1500);
+			done();
+
+		},
+
+		async enter(data){
+		},
+		async once(data){
+		}
+	}],
 	views: [{
 	    namespace: 'home',
 	    beforeLeave(data) {
 	      var script = document.getElementById('hometransition');
 	      $( script ).remove();
-	      pageTransition();
 	    },
 	    afterEnter(data) {
 	    	preloadImages('.img-slider-home').then(function () {
@@ -4535,7 +4549,6 @@ barba.init({
 	  	beforeLeave(data) {
 	      var script = document.getElementById('hometransition');
 	      $( script ).remove();
-	      pageTransition();
 	    },
 	  	afterEnter(data) {
 	  		contentAnimation();
