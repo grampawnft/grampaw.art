@@ -4288,34 +4288,97 @@ function () {
 }();
 
 exports.Navigation = Navigation;
+
+// start barba
+
+function pageTransition(){
+
+	var tl = gsap.timeline();
+
+	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2})
+	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1})
+}
+
+function contentAnimation(){
+
+	var tl = gsap.timeline();
+
+	if ($('body').hasClass('body-home')){
+		tl.from('header', { duration: .5, opacity: 0, delay: 3.4 });
+		tl.to('header', { duration: .5, opacity: 1});
+	}
+	else{
+		tl.from('header', { duration: .5, opacity: 0});
+		tl.to('header', { duration: .5, opacity: 1});
+	}
+	
+}
+
+function delay(n){
+	n = n || 2000;
+	return new Promise(done => {
+		setTimeout(() => {
+			done();
+		}, n);
+	});
+}
+
+barba.init({
+
+	sync: true,
+	transitions: [{
+		async leave(data){
+
+			const done = this.async();
+			pageTransition();
+			await delay(1500);
+			done();
+
+		},
+
+		async enter(data){
+			contentAnimation();
+		},
+		async once(data){
+			contentAnimation()
+		}
+	}],
+	views: [{
+	    namespace: 'home',
+	    afterEnter(data) {
+	    	preloadImages('.slide__img').then(function () {
+				// remove loader (loading class) 
+				// document.body.classList.remove('loading');
+				var slideshow = new _slideshow.Slideshow(document.querySelector('.slideshow'));
+				var navigation = new Navigation(document.querySelector('.slides-nav')); // navigation events
+
+				navigation.DOM.ctrls.next.addEventListener('click', function () {
+				    return slideshow.next();
+				});
+				navigation.DOM.ctrls.prev.addEventListener('click', function () {
+				    return slideshow.prev();
+				}); // set the initial navigation current slide value
+
+				navigation.updateCurrent(slideshow.current); // set the navigation total number of slides
+
+				navigation.DOM.total.innerHTML = slideshow.current < 10 ? "0".concat(slideshow.slidesTotal) : slideshow.slidesTotal;
+
+				setInterval(function () {
+				    slideshow.next();
+				}, 10000);
+
+				// when a new slide is shown, update the navigation current slide value
+
+				slideshow.on('updateCurrent', function (position) {
+					return navigation.updateCurrent(position);
+				});
+			});
+	    }
+	  }]
+})
+
 // Preload all images
-preloadImages('.slide__img').then(function () {
-  // remove loader (loading class) 
-  // document.body.classList.remove('loading');
-  var slideshow = new _slideshow.Slideshow(document.querySelector('.slideshow'));
-  var navigation = new Navigation(document.querySelector('.slides-nav')); // navigation events
 
-  navigation.DOM.ctrls.next.addEventListener('click', function () {
-    return slideshow.next();
-  });
-  navigation.DOM.ctrls.prev.addEventListener('click', function () {
-    return slideshow.prev();
-  }); // set the initial navigation current slide value
-
-  navigation.updateCurrent(slideshow.current); // set the navigation total number of slides
-
-  navigation.DOM.total.innerHTML = slideshow.current < 10 ? "0".concat(slideshow.slidesTotal) : slideshow.slidesTotal;
-
-  setInterval(function () {
-    slideshow.next();
-  }, 10000);
-
-   // when a new slide is shown, update the navigation current slide value
-
-  slideshow.on('updateCurrent', function (position) {
-    return navigation.updateCurrent(position);
-  });
-});
 },{"imagesloaded":"../node_modules/imagesloaded/imagesloaded.js","./slideshow":"js/demo3/slideshow.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
