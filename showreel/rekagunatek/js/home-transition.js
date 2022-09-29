@@ -76,12 +76,13 @@ $(document).ready(function(){
 	    }
 
 	    $('body').addClass('loading');
-    	tl.from('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
+    	tl.from('ul.transition li', { duration: .5, scaleY: 1, stagger: .2, delay: 2.5});
     	$('.hero-slider-wrapper').imagesLoaded().done( function( instance ) {
     		setTimeout(function() {
     			$('body').removeClass('loading');
+    			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .2});
 			}, 2500);
-		  	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .2, delay: 2.5});	
+		  	
 		  	setTimeout(function() {
 		    	$('.hero-slider-wrapper').on('init', function(event, slick){
 				    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
