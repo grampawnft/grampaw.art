@@ -4373,20 +4373,6 @@ function pageTransition(){
 		$('body').addClass('loading');
 	}, 700);
 
-    if('body'.hasClass('body-home')){
-    	preloadImages('.img-slider-home').then(function () {
-    		$('body').removeClass('loading');
-    		tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
-    	});
-    }
-
-    else{
-    	setTimeout(function() { 
-	    	$('body').removeClass('loading');
-	    	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
-	    }, 2500);
-    }
-
 }
 
 function contentAnimation(){
@@ -4410,31 +4396,19 @@ function delay(n){
 barba.init({
 
 	sync: true,
-	transitions: [{
-		async leave(data){
-
-			const done = this.async();
-			pageTransition();
-			await delay(1500);
-			done();
-
-		},
-
-		async enter(data){
-			contentAnimation();
-		},
-		async once(data){
-			contentAnimation()
-		}
-	}],
 	views: [{
 	    namespace: 'home',
 	    beforeLeave(data) {
 	      var script = document.getElementById('hometransition');
 	      $( script ).remove();
+	      pageTransition();
 	    },
 	    afterEnter(data) {
 	    	preloadImages('.img-slider-home').then(function () {
+
+	    		$('body').removeClass('loading');
+    			tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: .1});
+
 	    		var offset;
 			    function polylineToPath() {
 
