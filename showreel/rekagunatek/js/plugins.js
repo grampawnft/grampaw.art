@@ -4483,7 +4483,10 @@ barba.init({
 
 		async enter(data){
 			if ($('body').hasClass('body-home')){
-				setTimeout(function() {
+				preloadImages('.img-slider-home').then(function () {
+
+	    		contentAnimation();
+	    		setTimeout(function() {
 				    $('.hero-slider-wrapper').on('init', function(event, slick){
 					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
 					});
@@ -4502,6 +4505,8 @@ barba.init({
 					});
 					$('.svg-anim, .svg-anim2').css('opacity','1');
 				}, 3000);
+			    
+	    		});
 			}
 		},
 		async once(data){
