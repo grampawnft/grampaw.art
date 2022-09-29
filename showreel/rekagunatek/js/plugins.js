@@ -4365,9 +4365,9 @@ function animatePath(){
 function pageTransition(){
 
 	var tl = gsap.timeline();
-	
-	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
+
 	tl.to('.main-container', { duration: .5, opacity: 0});
+	tl.to('ul.transition li', { duration: .5, scaleY: 1, stagger: .2});
 
 	setTimeout(function() { 
 		$('body').addClass('loading');
@@ -4380,8 +4380,8 @@ function contentAnimation(){
 	var tl = gsap.timeline();
 	setTimeout(function() { 
 		$('body').removeClass('loading');
-		tl.to('.main-container', { duration: .5, opacity: 1});
 	}, 2500);
+	tl.to('.main-container', { duration: .5, opacity: 1, delay: 1.5});
 	tl.to('ul.transition li', { duration: .5, scaleY: 0, stagger: .1, delay: 2.5});
 	
 }
@@ -4478,10 +4478,6 @@ barba.init({
 				    $('.hero-slider-wrapper').on('init', function(event, slick){
 					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
 					});
-					$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-					    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
-				    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
-					});
 					$('.hero-slider-wrapper').slick({
 						slidesToShow: 1,
 						slidesToScroll: 1,
@@ -4494,6 +4490,10 @@ barba.init({
 						autoplaySpeed: 8000,
 						focusOnSelect: false,
 		  				pauseOnHover:false
+					});
+					$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+					    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
+				    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
 					});
 					 polylineToPath();
 					 $('.svg-anim, .svg-anim2').css('opacity','1');
