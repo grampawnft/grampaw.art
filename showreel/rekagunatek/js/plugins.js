@@ -4499,7 +4499,7 @@ barba.init({
 
 			polylineToPath();
 			$('.hero-slider-wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-			    $(".hero-slider-wrapper").find('.hero-slider-item').removeClass("active");
+			    $(".hero-slider-wrapper").find('.hero-slider-item').not(nextSlide).removeClass("active");
 		    	$(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).addClass("active");
 
 		    	var _video = $(".hero-slider-wrapper").find('.hero-slider-item').eq(nextSlide).find('video');
@@ -4517,6 +4517,9 @@ barba.init({
 	    		contentAnimation();
 
 			    setTimeout(function() {
+				    $('.hero-slider-wrapper').on('init', function(event, slick){
+					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
+					});
 					$('.hero-slider-wrapper').slick({
 						slidesToShow: 1,
 						slidesToScroll: 1,
@@ -4530,7 +4533,6 @@ barba.init({
 						focusOnSelect: false,
 		  				pauseOnHover:false
 					});
-					$(".hero-slider-wrapper").find('.slick-current').addClass("active");
 					$('.svg-anim, .svg-anim2').css('opacity','1');
 				 }, 3000);
 	    	});
