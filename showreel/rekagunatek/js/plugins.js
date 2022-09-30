@@ -4568,6 +4568,60 @@ barba.init({
 			});
 
 			leaderToPath();
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			// gsap.set('.svg-leader', {opacity: 0});
+
+			// var rotate = gsap.timeline({
+			// 	scrollTrigger: {
+			// 		trigger: '.our-leader',
+			// 		start: 'center 80%',
+			// 		end:'+=10000',
+			// 		scrub: .1
+			// 	}
+			// }).to('.svg-leader', {
+			// 	  rotation: 360*5,
+			// 	  // opacity: 1,
+			// 	  duration:1, ease:'none'
+			// })
+
+			gsap.to('.svg-leader',{
+				scrollTrigger: {
+					trigger: '.our-leader',
+					start: 'top 80%',
+    				toggleActions: "play reverse play reverse",
+				},
+				duration: 5,
+				opacity: 1,
+				ease: "expo.out"
+			});
+
+			gsap.to('.caption-wrapper-leader',{
+				scrollTrigger: {
+					trigger: '.caption-wrapper-leader',
+					start: 'center 80%',
+					end: "bottom top",
+    				toggleActions: "play reverse play reverse",
+				},
+				duration: 2,
+				x: 0,
+				opacity: 1,
+				ease: "back.out(2)"
+			});
+
+			gsap.to('.footer-wrapper',{
+				scrollTrigger: {
+					trigger: 'footer',
+					start: 'top 100%',
+    				toggleActions: "play reverse play reverse",
+				},
+				duration: 1.5,
+				y: 0,
+				opacity: 1,
+				ease: "circ.out"
+			});
+
 	    }
 	  },
 	  {
