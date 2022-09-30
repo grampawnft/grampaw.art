@@ -4293,7 +4293,7 @@ exports.Navigation = Navigation;
 var offset;
 function polylineToPath() {
 
-    var polyline = document.querySelectorAll('polyline, polygon');
+    var polyline = document.querySelectorAll('.header-polyline, .header-polygon');
 
 	[].forEach.call(polyline, function(poly) {
 		var svgNS = poly.ownerSVGElement.namespaceURI;
@@ -4313,7 +4313,7 @@ function polylineToPath() {
 		setInterval(function () {
 	    	animate();
 	    	animatePath();
-			}, 8000);
+			}, 10000);
 		
 	});
 }
@@ -4394,79 +4394,6 @@ function delay(n){
 		}, n);
 	});
 }
-
-var offset;
-function polylineToPath() {
-
-    var polyline = document.querySelectorAll('polyline, polygon');
-
-	[].forEach.call(polyline, function(poly) {
-		var svgNS = poly.ownerSVGElement.namespaceURI;
-		var path = document.createElementNS(svgNS, 'path');
-		var points = poly.getAttribute('points').split(/\s+|,/);
-			var x0=points.shift(), y0=points.shift();
-		var pathdata = 'M'+x0+','+y0+'L'+points.join(' ');
-			if (poly.tagName=='polygon') pathdata+='z';
-		path.setAttribute('class', 'p');
-		path.setAttribute('d',pathdata);
-		var len = path.getTotalLength();
-		path.style.strokeDashoffset = len;
-		path.style.strokeDasharray = len + ',' + len;
-		poly.parentNode.replaceChild(path, poly);
-		animate();
-		animatePath();
-		setInterval(function () {
-	    	animate();
-	    	animatePath();
-			}, 16000);
-		
-	});
-}
-
-function animate() {
-    var paths = document.querySelectorAll('.p');
-
-	[].forEach.call(paths, function(path) {
-	  var length = path.getTotalLength();
-	  // Clear any previous transition
-	  path.style.transition = path.style.WebkitTransition =
-	    'none';
-	  // Set up the starting positions
-	  path.style.strokeDasharray = length + ' ' + length;
-	  path.style.strokeDashoffset = length;
-	  // Trigger a layout so styles are calculated & the browser
-	  // picks up the starting position before animating
-	  path.getBoundingClientRect();
-	  // Define our transition
-	  path.style.transition = path.style.WebkitTransition =
-	    'stroke-dashoffset 5s';
-	  // Go!
-	  path.style.strokeDashoffset = '0';
-	})
-}
-
-function animatePath(){
-	var paths = document.querySelectorAll('.st0, .st1');
-
-	[].forEach.call(paths, function(path) {
-	  var length = path.getTotalLength();
-	  // Clear any previous transition
-	  path.style.transition = path.style.WebkitTransition =
-	    'none';
-	  // Set up the starting positions
-	  path.style.strokeDasharray = length + ' ' + length;
-	  path.style.strokeDashoffset = length;
-	  // Trigger a layout so styles are calculated & the browser
-	  // picks up the starting position before animating
-	  path.getBoundingClientRect();
-	  // Define our transition
-	  path.style.transition = path.style.WebkitTransition =
-	    'stroke-dashoffset 2s';
-	  // Go!
-	  path.style.strokeDashoffset = '0';
-	})
-}
-
 
 barba.init({
 
