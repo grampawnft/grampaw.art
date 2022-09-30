@@ -4571,25 +4571,10 @@ barba.init({
 
 			gsap.registerPlugin(ScrollTrigger);
 
-			// gsap.set('.svg-leader', {opacity: 0});
-
-			// var rotate = gsap.timeline({
-			// 	scrollTrigger: {
-			// 		trigger: '.our-leader',
-			// 		start: 'center 80%',
-			// 		end:'+=10000',
-			// 		scrub: .1
-			// 	}
-			// }).to('.svg-leader', {
-			// 	  rotation: 360*5,
-			// 	  // opacity: 1,
-			// 	  duration:1, ease:'none'
-			// })
-
 			gsap.to('.svg-leader',{
 				scrollTrigger: {
 					trigger: '.our-leader',
-					start: 'top 80%',
+					start: 'top 75%',
     				toggleActions: "play reverse play reverse",
 				},
 				duration: 5,
@@ -4600,7 +4585,7 @@ barba.init({
 			gsap.to('.caption-wrapper-leader',{
 				scrollTrigger: {
 					trigger: '.caption-wrapper-leader',
-					start: 'center 80%',
+					start: 'center 75%',
 					end: "bottom top",
     				toggleActions: "play reverse play reverse",
 				},
@@ -4614,7 +4599,6 @@ barba.init({
 				scrollTrigger: {
 					trigger: 'footer',
 					start: 'top 100%',
-    				toggleActions: "play reverse play reverse",
 				},
 				duration: 1.5,
 				y: 0,
