@@ -4587,8 +4587,6 @@ barba.init({
 				scrollTrigger: {
 					trigger: '.caption-wrapper-leader',
 					start: 'center 75%',
-					end: "bottom top",
-    				toggleActions: "play reverse play reverse",
 				},
 				duration: 2,
 				x: 0,
