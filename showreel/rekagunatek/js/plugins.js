@@ -4520,6 +4520,7 @@ barba.init({
 			    setTimeout(function() {
 				    $('.hero-slider-wrapper').on('init', function(event, slick){
 					    $(".hero-slider-wrapper").find('.slick-current').addClass("active");
+					    $('.svg-anim, .svg-anim2').hide();
 					});
 					$('.hero-slider-wrapper').slick({
 						slidesToShow: 1,
