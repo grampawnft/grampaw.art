@@ -538,7 +538,7 @@ a {
   z-index: 1000; }
   @media screen and (max-width: 480px) {
     .frame {
-      padding: 2rem 4vw;
+      padding: 1rem 4vw;
       background-color: #000; } }
 
 .frame__title {
@@ -546,6 +546,9 @@ a {
   margin: 0 0 1rem;
   font-weight: 500;
   cursor: pointer; }
+  @media screen and (max-width: 480px) {
+    .frame__title {
+      margin: 0 0 5px; } }
 
 .frame__links {
   display: inline;
@@ -908,7 +911,7 @@ canvas.webgl {
 @media screen and (max-width: 480px) {
   .section {
     text-align: center;
-    margin-top: 40px; } }
+    margin-top: 50px; } }
 
 .section:first-child .section__title-number {
   margin-bottom: 10px; }
