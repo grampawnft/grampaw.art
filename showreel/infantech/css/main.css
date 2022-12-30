@@ -553,6 +553,9 @@ a {
 .frame__links {
   display: inline;
   padding-top: 15px; }
+  @media screen and (max-width: 480px) {
+    .frame__links {
+      padding-top: 0; } }
   .frame__links .link-menu {
     font-size: 16px;
     -webkit-transition: .3s all;
