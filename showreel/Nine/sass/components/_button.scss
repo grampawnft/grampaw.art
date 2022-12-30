@@ -1,0 +1,178 @@
+.btnNine {
+    min-width: 100px;
+    display: inline-block;
+    padding: 8px 30px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    // border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    outline: none !important;
+    margin-right: 5px;
+    transition: .2s all;
+    &:last-child{
+        margin-right: 0;
+    }
+    &.btnNine-default {
+        background: $green;
+        color: #fff;
+        padding: 10px 20px 8px;
+        font-family: raleway;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+        &:hover{
+            background: darken($green, 10%)
+        }
+        &:disabled{
+            background: #dcdcdc !important;
+            color: #969696;
+        }
+    }
+    &.btnNine-create {
+        background: $black;
+        color: #fff;
+        padding: 12px 20px 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: raleway;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &:hover{
+            background: lighten(#484848, 10%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            .ic-create{
+                path{
+                    fill: $light-blue;
+                }
+            }
+        }
+        .ic-create{
+            margin: -4px 10px 0 -5px;
+            width: 14px;
+            path{
+                fill: #fff;
+            }
+        }
+        .glyphicon{
+            color: #d14e50;
+            margin-right: 5px;
+        }
+    }
+    &.btnNine-cancel {
+        background: $gray;
+        color: #fff;
+        padding: 10px 20px 7px;
+        font-family: raleway;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &:hover{
+            background: lighten($gray, 10%)
+        }
+        &:disabled{
+            background: #dcdcdc !important;
+            color: #969696;
+        }
+    }
+}
+
+.notif-create{
+    padding: 0 20px;
+    margin-top: 12px;
+    font-style: italic;
+    color: #969696;
+    span{
+        color: #d14e50;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.ic-export{
+    margin: -2px 10px 0 -5px;
+    width: 18px;
+}
+
+.pagination-custom{
+    display: flex;
+    align-items: center;
+    svg{
+        width: 20px;
+        margin: 0 12px;
+        cursor: pointer;
+        path{
+            fill: $gray;
+        }
+        &:hover{
+            path{
+                fill: $light-blue;
+            }
+        }
+        &.next{
+            transform: rotate(180deg);
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.btn-pagination{
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+    padding: 5px 0 4px;
+    text-align: center;
+    border: 1px solid #e4e4e4;
+    border-radius: 50%;
+    background-color: #ebebeb;
+    color: #646464;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 4px rgba(255, 255, 0255, 0.15);
+    margin-right: 2px;
+    transition: .2s all;
+    cursor: pointer;
+    &:last-child{
+        margin-right: 0;
+    }
+    &:hover{
+        background: $light-blue;
+        color: #fff;
+    }
+    &.active{
+        background: $light-blue;
+        color: #fff;
+    }
+    &.last{
+        border-radius: 3px;
+        width: auto;
+        padding: 5px 12px 4px;
+        background: $light-blue;
+        color: #fff;
+    }
+}
+
+.input-group{
+    input{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; 
+    }
+    button{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 38px;
+    }
+}
